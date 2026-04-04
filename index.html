@@ -3,442 +3,454 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LightningCoach — AI Leadership Assessment for Indian Companies</title>
-<meta name="description" content="AI-powered 360° leadership assessment delivered on WhatsApp. Find your managers' blind spots in 48 hours. Free during pilot.">
+<title>LightningCoach — Discover Your Leadership Archetype in 10 Minutes</title>
+<meta name="description" content="AI-powered situational leadership assessment on WhatsApp. Discover your leadership archetype, strengths, and blind spots. Free. No app needed.">
+<meta property="og:title" content="LightningCoach — What Kind of Leader Are You?">
+<meta property="og:description" content="Situational leadership assessment. 10 real scenarios. Instant AI report. Discover your archetype. Free on WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lightningcoach.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--teal:#0D9488;--teal-dk:#0F766E;--teal-lt:#14B8A6;--dark:#0F172A;--gray:#64748B;--gray-lt:#94A3B8;--border:#e2e8f0;--bg:#F0FDFA;--green:#10B981;--amber:#F59E0B}
-body{font-family:'DM Sans',system-ui,sans-serif;color:var(--dark);background:#fff;overflow-x:hidden}
+:root{--teal:#0D9488;--teal-dk:#0F766E;--dark:#0F172A;--gray:#64748B;--gray-lt:#94A3B8;--border:#e2e8f0;--bg:#F0FDFA;--green:#10B981;--amber:#F59E0B;--red:#EF4444;--purple:#8B5CF6;--blue:#3B82F6}
+body{font-family:'DM Sans',system-ui,-apple-system,sans-serif;color:var(--dark);background:#fff;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400}
 .ctn{max-width:1100px;margin:0 auto;padding:0 24px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-weight:600;font-size:15px;cursor:pointer;border:none;text-decoration:none;transition:all .2s;font-family:'DM Sans',sans-serif}
-.btn-accent{background:var(--amber);color:var(--dark)}.btn-accent:hover{background:#D97706;transform:translateY(-1px)}
-.btn-white{background:rgba(255,255,255,.12);color:#fff;backdrop-filter:blur(8px)}.btn-white:hover{background:rgba(255,255,255,.2)}
-.btn-teal{background:var(--teal);color:#fff}.btn-teal:hover{background:var(--teal-dk);transform:translateY(-1px)}
+.btn{display:-webkit-inline-flex;display:inline-flex;-webkit-align-items:center;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-weight:600;font-size:15px;cursor:pointer;border:none;text-decoration:none;font-family:'DM Sans',sans-serif;-webkit-transition:all .2s;transition:all .2s}
+.btn-wa{background:#25D366;color:#fff}.btn-wa:hover{background:#1da851}
+.btn-teal{background:var(--teal);color:#fff}.btn-teal:hover{background:var(--teal-dk)}
 .btn-outline{background:transparent;color:var(--teal);border:2px solid var(--teal)}.btn-outline:hover{background:var(--teal);color:#fff}
 .btn-sm{padding:10px 20px;font-size:13px}
+.btn-dark{background:rgba(255,255,255,.08);color:#fff;border:none}.btn-dark:hover{background:rgba(255,255,255,.15)}
 
-/* NAV */
-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Instrument Serif',Georgia,serif;font-size:24px;color:var(--teal);text-decoration:none;display:flex;align-items:center;gap:8px}
-.nav-links{display:flex;gap:8px;align-items:center}
-.nav-links a{padding:8px 16px;border-radius:8px;font-size:14px;font-weight:500;color:var(--gray);text-decoration:none;transition:all .2s}
-.nav-links a:hover{color:var(--teal);background:var(--bg)}
-.mobile-menu{display:none;background:none;border:none;font-size:24px;cursor:pointer}
+nav{position:-webkit-sticky;position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;height:64px;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:space-between;justify-content:space-between}
+.logo{font-family:'Instrument Serif',Georgia,serif;font-size:24px;color:var(--teal);text-decoration:none}
+.nav-r{display:-webkit-flex;display:flex;gap:8px;-webkit-align-items:center;align-items:center}
+.nav-r a{padding:8px 16px;border-radius:8px;font-size:14px;font-weight:500;color:var(--gray);text-decoration:none}
+.nav-r a:hover{color:var(--teal);background:var(--bg)}
+.mob-menu{display:none;background:none;border:none;font-size:24px;cursor:pointer}
 
-/* HERO */
-.hero{padding:80px 24px 64px;background:linear-gradient(135deg,#0F172A 0%,#134E4A 50%,#0F766E 100%);color:#fff;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 70% 30%,rgba(20,184,166,.15) 0%,transparent 60%)}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);padding:6px 16px;border-radius:20px;font-size:13px;margin-bottom:24px}
-.hero h1{font-size:48px;line-height:1.1;margin-bottom:20px}
-.hero h1 span{color:#5EEAD4}
-.hero p{font-size:17px;color:#94A3B8;line-height:1.6;margin-bottom:32px;max-width:460px}
-.hero-stats{display:flex;gap:40px;margin-top:48px}
-.hero-stats .stat-val{font-size:28px;font-weight:700;font-family:'Instrument Serif',Georgia,serif}
-.hero-stats .stat-label{font-size:12px;color:#94A3B8;margin-top:2px}
-.hero-preview{background:rgba(255,255,255,.05);border-radius:20px;padding:28px;border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(16px)}
-.preview-item{display:flex;align-items:center;gap:12px;padding:12px 0}
-.preview-item+.preview-item{border-top:1px solid rgba(255,255,255,.06)}
-.preview-score{background:rgba(20,184,166,.2);padding:4px 12px;border-radius:12px;font-size:14px;font-weight:700;color:#5EEAD4}
+.hero{padding:80px 24px 72px;background:var(--dark);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:-webkit-radial-gradient(circle at 30% 50%,rgba(139,92,246,.08) 0%,transparent 50%);background:radial-gradient(circle at 30% 50%,rgba(139,92,246,.08) 0%,transparent 50%)}
+.hero::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:-webkit-radial-gradient(circle at 80% 20%,rgba(20,184,166,.1) 0%,transparent 50%);background:radial-gradient(circle at 80% 20%,rgba(20,184,166,.1) 0%,transparent 50%)}
+.hero-inner{position:relative;display:-webkit-flex;display:flex;gap:64px;-webkit-align-items:center;align-items:center}
+.hero-left{-webkit-flex:1;flex:1}
+.hero-right{-webkit-flex:0 0 360px;flex:0 0 360px}
+.hero-badge{display:inline-flex;gap:6px;background:rgba(139,92,246,.15);padding:6px 16px;border-radius:20px;font-size:13px;margin-bottom:24px;border:1px solid rgba(139,92,246,.2)}
+.hero h1{font-size:46px;line-height:1.08;margin-bottom:20px}
+.hero h1 em{font-style:italic;color:#A78BFA}
+.hero p{font-size:17px;color:#94A3B8;line-height:1.6;margin-bottom:32px;max-width:480px}
+.hero-btns{display:-webkit-flex;display:flex;gap:12px;-webkit-flex-wrap:wrap;flex-wrap:wrap}
+.hero-stats{display:-webkit-flex;display:flex;gap:40px;margin-top:48px;-webkit-flex-wrap:wrap;flex-wrap:wrap}
+.sv{font-size:28px;font-weight:700;font-family:'Instrument Serif',Georgia,serif}
+.sl{font-size:12px;color:#94A3B8;margin-top:2px}
 
-/* LOGOS */
-.logos{padding:40px 24px;background:#fff;border-bottom:1px solid var(--border);text-align:center}
-.logos p{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--gray-lt);margin-bottom:20px}
-.logo-row{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;opacity:.5}
-.logo-row span{font-size:15px;font-weight:700;color:var(--gray)}
+.archetype-preview{background:rgba(255,255,255,.03);border-radius:20px;padding:24px;border:1px solid rgba(255,255,255,.06)}
+.arch-card{display:-webkit-flex;display:flex;gap:12px;-webkit-align-items:center;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.arch-card:last-child{border:none}
+.arch-emoji{font-size:28px;-webkit-flex-shrink:0;flex-shrink:0;width:40px;text-align:center}
+.arch-info{-webkit-flex:1;flex:1}
+.arch-name{font-size:14px;font-weight:600;margin-bottom:2px}
+.arch-desc{font-size:11px;color:#94A3B8;line-height:1.4}
+.arch-tag{padding:3px 10px;border-radius:10px;font-size:10px;font-weight:600;-webkit-flex-shrink:0;flex-shrink:0}
 
-/* SECTIONS */
 .section{padding:80px 24px}
-.section-eyebrow{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--teal);margin-bottom:8px;text-align:center}
+.section-eye{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--teal);margin-bottom:8px;text-align:center}
 .section-title{font-size:36px;text-align:center;margin-bottom:12px}
-.section-sub{font-size:16px;color:var(--gray);text-align:center;max-width:520px;margin:0 auto 48px}
+.section-sub{font-size:16px;color:var(--gray);text-align:center;max-width:560px;margin:0 auto 48px}
 
-/* STEPS */
-.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-.step-card{background:#fff;border-radius:16px;padding:32px 24px;text-align:center;border:1px solid var(--border);transition:all .2s}
-.step-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.06);transform:translateY(-2px)}
-.step-icon{font-size:36px;margin-bottom:16px}
-.step-num{font-size:12px;font-weight:700;color:var(--teal);margin-bottom:8px}
-.step-card h3{font-size:20px;margin-bottom:8px}
-.step-card p{font-size:14px;color:var(--gray);line-height:1.6}
+.diff-grid{display:-webkit-flex;display:flex;gap:20px;-webkit-flex-wrap:wrap;flex-wrap:wrap}
+.diff-card{-webkit-flex:1;flex:1;min-width:200px;padding:28px 24px;border-radius:16px;border:1px solid var(--border);background:#fff}
+.diff-card:hover{-webkit-box-shadow:0 8px 32px rgba(0,0,0,.05);box-shadow:0 8px 32px rgba(0,0,0,.05)}
+.diff-icon{font-size:32px;margin-bottom:14px}
+.diff-card h3{font-size:18px;margin-bottom:6px}
+.diff-card p{font-size:13px;color:var(--gray);line-height:1.6}
 
-/* METRICS BAR */
-.metrics-bar{padding:60px 24px;background:linear-gradient(135deg,#0F766E,#134E4A);color:#fff}
-.metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
-.metric-val{font-size:40px;font-weight:700;font-family:'Instrument Serif',Georgia,serif}
-.metric-label{font-size:13px;color:#94A3B8;margin-top:4px}
+.scenario-demo{max-width:500px;margin:0 auto}
+.scenario-box{background:#fff;border-radius:16px;padding:28px;border:1px solid var(--border);margin-bottom:24px}
+.scenario-tag{font-size:11px;font-weight:700;color:var(--teal);margin-bottom:8px}
+.scenario-q{font-size:15px;font-weight:500;line-height:1.5;margin-bottom:16px}
+.scenario-opt{display:-webkit-flex;display:flex;gap:10px;-webkit-align-items:start;align-items:start;padding:10px 14px;border-radius:10px;border:1px solid var(--border);margin-bottom:8px;font-size:13px;line-height:1.5;cursor:pointer;-webkit-transition:all .15s;transition:all .15s}
+.scenario-opt:hover{border-color:var(--teal);background:var(--bg)}
+.scenario-opt .letter{font-weight:700;color:var(--teal);-webkit-flex-shrink:0;flex-shrink:0;width:20px}
+.scenario-note{font-size:12px;color:var(--gray-lt);text-align:center;font-style:italic}
 
-/* TESTIMONIALS */
-.testi-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.testi-card{background:#fff;border-radius:16px;padding:28px;border:1px solid var(--border)}
-.testi-header{display:flex;justify-content:space-between;align-items:start;margin-bottom:16px}
-.testi-name{font-weight:600}
-.testi-role{font-size:13px;color:var(--gray)}
-.testi-badge{background:var(--bg);color:var(--teal);padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600}
-.testi-text{font-size:14px;color:#475569;line-height:1.7;font-style:italic}
+.metrics{padding:56px 24px;background:var(--teal-dk);color:#fff}
+.m-grid{display:-webkit-flex;display:flex;gap:32px;text-align:center;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-justify-content:center;justify-content:center}
+.m-grid>div{-webkit-flex:1;flex:1;min-width:140px}
 
-/* COMPARISON */
-.compare-table{width:100%;border-collapse:collapse;font-size:14px;max-width:800px;margin:0 auto}
-.compare-table th{padding:14px 20px;font-weight:600}
-.compare-table td{padding:12px 20px;border-top:1px solid var(--border)}
-.compare-table thead{background:var(--bg)}
-.compare-table .us{text-align:center;color:var(--teal);font-weight:600}
-.compare-table .them{text-align:center;color:var(--gray-lt)}
+.sample-report{max-width:640px;margin:0 auto}
+.report-hdr{background:var(--dark);border-radius:16px 16px 0 0;padding:28px;color:#fff}
+.report-body{background:#fff;border-radius:0 0 16px 16px;padding:28px;border:1px solid var(--border);border-top:none}
+.archetype-result{display:-webkit-flex;display:flex;gap:16px;-webkit-align-items:center;align-items:center;padding:20px;background:var(--bg);border-radius:12px;margin-bottom:20px;border:1px solid #99F6E4}
+.archetype-result .big-emoji{font-size:40px}
+.archetype-label{font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:1px}
+.archetype-name{font-size:22px;font-family:'Instrument Serif',Georgia,serif}
+.archetype-sub{font-size:12px;color:var(--gray);margin-top:2px}
+.insight-box{padding:16px;border-radius:10px;margin-bottom:12px}
+.insight-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.insight-text{font-size:13px;line-height:1.6}
+.dim-row{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.dim-name{-webkit-flex:0 0 120px;flex:0 0 120px;font-size:12px;font-weight:600}
+.dim-bar{-webkit-flex:1;flex:1;height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden}
+.dim-fill{height:100%;border-radius:4px}
+.dim-score{-webkit-flex:0 0 36px;flex:0 0 36px;font-size:12px;font-weight:600;text-align:right}
 
-/* PRICING */
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:900px;margin:0 auto}
-.price-card{background:#fff;border-radius:16px;padding:32px 24px;border:1px solid var(--border);text-align:center;position:relative;transition:all .2s}
-.price-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.06)}
-.price-card.featured{border:2px solid var(--teal)}
-.price-pop{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--teal);color:#fff;padding:4px 16px;border-radius:12px;font-size:12px;font-weight:700;white-space:nowrap}
-.price-name{font-size:20px;margin-bottom:8px}
-.price-amount{font-size:36px;font-weight:700;font-family:'Instrument Serif',Georgia,serif;color:var(--teal);margin-bottom:4px}
-.price-unit{font-size:13px;color:var(--gray-lt);margin-bottom:20px}
-.price-features{text-align:left;border-top:1px solid var(--border);padding-top:16px;margin-bottom:24px}
-.price-features div{display:flex;gap:8px;margin-bottom:8px;font-size:13px;color:#475569}
-.price-features span{color:var(--green);font-weight:700;flex-shrink:0}
+.pricing{display:-webkit-flex;display:flex;gap:20px;max-width:900px;margin:0 auto;-webkit-flex-wrap:wrap;flex-wrap:wrap}
+.price-card{-webkit-flex:1;flex:1;min-width:200px;background:#fff;border-radius:16px;padding:28px 24px;border:1px solid var(--border);position:relative}
+.price-card.pop{border:2px solid var(--teal)}
+.price-pop{position:absolute;top:-12px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);background:var(--teal);color:#fff;padding:4px 14px;border-radius:12px;font-size:11px;font-weight:700;white-space:nowrap}
+.price-name{font-size:20px;margin-bottom:6px;text-align:center}
+.price-amt{font-size:36px;font-weight:700;font-family:'Instrument Serif',Georgia,serif;color:var(--teal);text-align:center;margin-bottom:2px}
+.price-unit{font-size:12px;color:var(--gray-lt);text-align:center;margin-bottom:20px}
+.price-feat{border-top:1px solid var(--border);padding-top:16px;margin-bottom:20px}
+.price-feat div{display:-webkit-flex;display:flex;gap:8px;margin-bottom:8px;font-size:13px;color:#475569}
+.price-feat span{color:var(--green);font-weight:700;-webkit-flex-shrink:0;flex-shrink:0}
 
-/* CTA */
-.cta-section{padding:80px 24px;background:linear-gradient(135deg,#0F172A,#134E4A);color:#fff;text-align:center}
-.cta-section h2{font-size:40px;margin-bottom:16px}
-.cta-section p{color:#94A3B8;font-size:18px;margin-bottom:32px}
+.cta{padding:80px 24px;background:var(--dark);color:#fff;text-align:center}
+.cta h2{font-size:38px;margin-bottom:16px}
+.cta p{color:#94A3B8;font-size:17px;margin-bottom:32px}
+.cta-sub{color:var(--gray);font-size:13px;margin-top:16px}
 
-/* FOOTER */
-footer{background:var(--dark);color:var(--gray-lt);padding:48px 24px 24px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
-.footer-brand{font-family:'Instrument Serif',Georgia,serif;font-size:22px;color:#fff;margin-bottom:12px}
-footer h4{color:#fff;font-size:14px;margin-bottom:16px;font-family:'DM Sans',sans-serif;font-weight:600}
-footer a{color:var(--gray-lt);text-decoration:none;display:block;margin-bottom:10px;font-size:13px}
-footer a:hover{color:#fff}
-.footer-bottom{border-top:1px solid #1E293B;padding-top:24px;display:flex;justify-content:space-between;font-size:12px}
+footer{background:var(--dark);color:var(--gray-lt);padding:32px 24px 16px;border-top:1px solid #1E293B}
 
-/* WHATSAPP FLOAT */
-.wa-float{position:fixed;bottom:24px;right:24px;z-index:99;width:60px;height:60px;border-radius:30px;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.4);cursor:pointer;transition:all .2s;text-decoration:none}
-.wa-float:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(37,211,102,.5)}
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:99;width:60px;height:60px;border-radius:30px;background:#25D366;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;-webkit-box-shadow:0 4px 16px rgba(37,211,102,.4);box-shadow:0 4px 16px rgba(37,211,102,.4);cursor:pointer;text-decoration:none}
+.wa-float:hover{-webkit-transform:scale(1.1);transform:scale(1.1)}
 .wa-float svg{width:32px;height:32px;fill:#fff}
 
-/* RESPONSIVE */
+.mirror-box{background:linear-gradient(135deg,#0F172A,#1E293B);border-radius:12px;padding:24px;margin-top:20px;border:1px solid rgba(255,255,255,.06)}
+.mirror-box p{font-size:15px;color:#e2e8f0;font-style:italic;line-height:1.6;text-align:center}
+.mirror-label{font-size:10px;color:#94A3B8;text-align:center;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+
 @media(max-width:768px){
-  .hero-grid{grid-template-columns:1fr!important;text-align:center}
-  .hero-stats{justify-content:center;flex-wrap:wrap;gap:24px}
-  .hero-preview{display:none}
-  .steps-grid,.pricing-grid,.testi-grid,.metrics-grid,.footer-grid{grid-template-columns:1fr!important}
-  .nav-links{display:none}
-  .mobile-menu{display:block}
+  .hero-inner{-webkit-flex-direction:column;flex-direction:column;text-align:center}
+  .hero-right{display:none}
+  .hero-stats{-webkit-justify-content:center;justify-content:center;gap:24px}
   .hero h1{font-size:32px}
+  .hero-btns{-webkit-justify-content:center;justify-content:center}
   .section-title{font-size:28px}
-  .compare-table{font-size:12px}
-  .compare-table th,.compare-table td{padding:8px 12px}
+  .diff-grid,.pricing,.m-grid{-webkit-flex-direction:column;flex-direction:column}
+  .nav-r{display:none}
+  .mob-menu{display:block}
 }
 </style>
+</head>
+<body>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="logo">⚡ LightningCoach</a>
-  <button class="mobile-menu" onclick="document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'flex'">☰</button>
-  <div class="nav-links">
+  <button class="mob-menu" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='flex'?'none':'flex'">☰</button>
+  <div class="nav-r">
     <a href="#how">How It Works</a>
+    <a href="#archetypes">Archetypes</a>
+    <a href="#report">Sample Report</a>
     <a href="#pricing">Pricing</a>
-    <a href="#stories">Results</a>
-    <!-- REPLACE_WHATSAPP_LINK below with your actual WhatsApp link -->
-    <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20try%20the%20free%20leadership%20assessment" class="btn btn-teal btn-sm">Start Free Assessment</a>
+    <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" class="btn btn-wa btn-sm">Discover Your Archetype</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="ctn">
-    <div class="hero-grid">
-      <div>
-        <div class="hero-badge">⚡ First assessment is free</div>
-        <h1>Your Managers Have<br><span>Leadership Blind Spots</span><br>Find Them in 48 Hours</h1>
-        <p>AI-powered 360° assessment + personalized coaching plan. Delivered on WhatsApp. Hindi & English. No app download needed.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap">
-          <!-- REPLACE_WHATSAPP_LINK -->
-          <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20try%20the%20free%20leadership%20assessment" class="btn btn-accent">Start Free on WhatsApp →</a>
-          <a href="#how" class="btn btn-white">See How It Works</a>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-badge">♟️ Situational Leadership Assessment</div>
+        <h1>Every Leader Has a<br><em>Blind Spot.</em><br>Find Yours in<br>10 Minutes.</h1>
+        <p>Not another self-rating quiz. 10 real workplace scenarios. No right answers — only patterns. Our AI analyzes your decisions and reveals the leader you actually are, not the one you think you are.</p>
+        <div class="hero-btns">
+          <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" class="btn btn-wa" style="font-size:17px;padding:16px 32px">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Discover My Archetype →
+          </a>
+          <a href="#how" class="btn btn-dark">See How It Works</a>
         </div>
         <div class="hero-stats">
-          <div><div class="stat-val">Free</div><div class="stat-label">During pilot</div></div>
-          <div><div class="stat-val">48h</div><div class="stat-label">Report delivery</div></div>
-          <div><div class="stat-val">10 min</div><div class="stat-label">Assessment time</div></div>
-          <div><div class="stat-val">96%</div><div class="stat-label">Satisfaction</div></div>
+          <div><div class="sv">Free</div><div class="sl">Always</div></div>
+          <div><div class="sv">10 min</div><div class="sl">On WhatsApp</div></div>
+          <div><div class="sv">6</div><div class="sl">Archetypes</div></div>
+          <div><div class="sv">Instant</div><div class="sl">AI Report</div></div>
         </div>
       </div>
-      <div style="display:flex;justify-content:center">
-        <div class="hero-preview">
-          <div style="font-size:13px;color:#94A3B8;margin-bottom:16px">📊 Sample assessment results</div>
-          <div class="preview-item">
-            <div style="width:8px;height:8px;border-radius:4px;background:#10B981;flex-shrink:0"></div>
-            <div style="flex:1"><div style="font-size:14px;font-weight:600">Strategic Clarity</div><div style="font-size:12px;color:#94A3B8">Strongest dimension</div></div>
-            <div class="preview-score">4.5/5</div>
-          </div>
-          <div class="preview-item">
-            <div style="width:8px;height:8px;border-radius:4px;background:#F59E0B;flex-shrink:0"></div>
-            <div style="flex:1"><div style="font-size:14px;font-weight:600">Delegation</div><div style="font-size:12px;color:#94A3B8">Blind spot identified</div></div>
-            <div class="preview-score" style="background:rgba(245,158,11,.2);color:#FCD34D">2.1/5</div>
-          </div>
-          <div class="preview-item">
-            <div style="width:8px;height:8px;border-radius:4px;background:#3B82F6;flex-shrink:0"></div>
-            <div style="flex:1"><div style="font-size:14px;font-weight:600">Accountability</div><div style="font-size:12px;color:#94A3B8">Hidden strength (peers rate higher)</div></div>
-            <div class="preview-score" style="background:rgba(59,130,246,.2);color:#93C5FD">4.5/5</div>
-          </div>
-          <div style="margin-top:16px;padding:12px 16px;background:rgba(255,255,255,.05);border-radius:10px;font-size:12px;color:#94A3B8;border:1px solid rgba(255,255,255,.06)">
-            <div style="font-weight:600;color:#5EEAD4;margin-bottom:4px">🎯 30-day development plan included</div>
-            Week 1-2: Delegation challenges<br>Week 3: Communication upgrade<br>Week 4: Resilience building
-          </div>
+      <div class="hero-right">
+        <div class="archetype-preview">
+          <div style="font-size:12px;color:#94A3B8;margin-bottom:14px;font-weight:600;letter-spacing:1px">THE 6 LEADERSHIP ARCHETYPES</div>
+          <div class="arch-card"><div class="arch-emoji">♟️</div><div class="arch-info"><div class="arch-name">The Strategist</div><div class="arch-desc">Clear vision, big-picture thinker. Risk: disconnected from people.</div></div></div>
+          <div class="arch-card"><div class="arch-emoji">🛡️</div><div class="arch-info"><div class="arch-name">The Shield</div><div class="arch-desc">Loyal protector, trust builder. Risk: absorbs too much, burns out.</div></div></div>
+          <div class="arch-card"><div class="arch-emoji">⚙️</div><div class="arch-info"><div class="arch-name">The Operator</div><div class="arch-desc">Reliable executor, gets it done. Risk: micromanages, can't let go.</div></div></div>
+          <div class="arch-card"><div class="arch-emoji">🤝</div><div class="arch-info"><div class="arch-name">The Connector</div><div class="arch-desc">Empathetic, loved by team. Risk: avoids hard decisions.</div></div></div>
+          <div class="arch-card"><div class="arch-emoji">🏗️</div><div class="arch-info"><div class="arch-name">The Builder</div><div class="arch-desc">Systems thinker, scales teams. Risk: over-systematizes, rigid.</div></div></div>
+          <div class="arch-card"><div class="arch-emoji">🔥</div><div class="arch-info"><div class="arch-name">The Catalyst</div><div class="arch-desc">Inspires change, high energy. Risk: inconsistent, exhausts team.</div></div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- LOGOS -->
-<section class="logos">
-  <p>Built for India's growing companies</p>
-  <div class="logo-row">
-    <span>IT Services</span><span>Manufacturing</span><span>Fintech</span><span>D2C Brands</span><span>SaaS</span><span>Healthcare</span><span>EdTech</span>
+<!-- WHY DIFFERENT -->
+<section class="section" id="how">
+  <div class="ctn">
+    <div class="section-eye">Why This Is Different</div>
+    <h2 class="section-title">Not Another Self-Rating Quiz</h2>
+    <p class="section-sub">Most leadership assessments ask you to rate yourself. You already know what you'll say. Ours puts you in real situations and reads your instincts.</p>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-icon">🎭</div>
+        <h3>Scenarios, Not Scales</h3>
+        <p>Real workplace situations with 4 choices. No "right" answer. Your instinct reveals more than your self-image.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">🔍</div>
+        <h3>Contradiction Detection</h3>
+        <p>"You say you delegate well, but when pressed, you chose to do it yourself." We catch the gap between intention and instinct.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">🧬</div>
+        <h3>Archetype Mapping</h3>
+        <p>Not a generic score. You get a specific leadership archetype — a pattern that explains your strengths AND why certain things keep going wrong.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">🪞</div>
+        <h3>The Mirror Sentence</h3>
+        <p>One line at the end that makes you feel deeply seen. It's the thing you'll screenshot and think about for days.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="section" id="how">
+<!-- SCENARIO PREVIEW -->
+<section class="section" style="background:var(--bg)">
   <div class="ctn">
-    <div class="section-eyebrow">How It Works</div>
-    <h2 class="section-title">10 Minutes on WhatsApp. That's It.</h2>
-    <p class="section-sub">No app download. No video calls. No HR paperwork. Just open WhatsApp and start.</p>
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-icon">📱</div>
-        <div class="step-num">STEP 1</div>
-        <h3>Open WhatsApp</h3>
-        <p>Click our link. The AI coach greets you and starts the assessment. Hindi or English — your choice.</p>
+    <div class="section-eye">Try a Sample Question</div>
+    <h2 class="section-title">What Would You Do?</h2>
+    <p class="section-sub">This is what the assessment feels like. No right answer — just your instinct.</p>
+    <div class="scenario-demo">
+      <div class="scenario-box">
+        <div class="scenario-tag">Q3/10 — THE DELEGATION DILEMMA</div>
+        <div class="scenario-q">You have a task you could do in 2 hours, but delegating it would take 4 hours (including explaining and reviewing). Deadline is tomorrow. You:</div>
+        <div class="scenario-opt" onclick="this.style.borderColor='#0D9488';this.style.background='#F0FDFA'"><div class="letter">A</div><div>Do it yourself — it's faster and quality will be better</div></div>
+        <div class="scenario-opt" onclick="this.style.borderColor='#0D9488';this.style.background='#F0FDFA'"><div class="letter">B</div><div>Delegate anyway — the learning opportunity is worth the extra time</div></div>
+        <div class="scenario-opt" onclick="this.style.borderColor='#0D9488';this.style.background='#F0FDFA'"><div class="letter">C</div><div>Do it yourself but schedule time next week to teach someone</div></div>
+        <div class="scenario-opt" onclick="this.style.borderColor='#0D9488';this.style.background='#F0FDFA'"><div class="letter">D</div><div>Split it — do the critical parts, delegate the rest</div></div>
       </div>
-      <div class="step-card">
-        <div class="step-icon">📊</div>
-        <div class="step-num">STEP 2</div>
-        <h3>Answer 10 Questions</h3>
-        <p>Rate yourself on 8 leadership dimensions. Takes 5 minutes. Then nominate 3-5 peers for anonymous feedback.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-icon">🧠</div>
-        <div class="step-num">STEP 3</div>
-        <h3>AI Analyzes</h3>
-        <p>Our AI compares your self-view with peer feedback. Finds strengths, blind spots, and hidden strengths.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-icon">🎯</div>
-        <div class="step-num">STEP 4</div>
-        <h3>Get Your Plan</h3>
-        <p>Receive a beautiful leadership report + a personalized 30-day coaching plan on WhatsApp. All in 48 hours.</p>
-      </div>
+      <p class="scenario-note">Every answer maps to your leadership pattern. A = Operator. B = Builder. C = Strategist. D = Balanced. There's no wrong choice — only your truth.</p>
+      <div style="text-align:center;margin-top:24px"><a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" class="btn btn-wa">Take the Full Assessment →</a></div>
     </div>
   </div>
 </section>
 
 <!-- METRICS -->
-<section class="metrics-bar">
+<section class="metrics">
   <div class="ctn">
-    <div class="metrics-grid">
-      <div><div class="metric-val">8</div><div class="metric-label">Leadership Dimensions</div></div>
-      <div><div class="metric-val">360°</div><div class="metric-label">Self + Peer Feedback</div></div>
-      <div><div class="metric-val">48h</div><div class="metric-label">Full Report Delivered</div></div>
-      <div><div class="metric-val">30 days</div><div class="metric-label">Personalized Coaching</div></div>
+    <div class="m-grid">
+      <div><div class="sv" style="color:#fff">10</div><div class="sl">Real Scenarios</div></div>
+      <div><div class="sv" style="color:#fff">8</div><div class="sl">Leadership Dimensions</div></div>
+      <div><div class="sv" style="color:#fff">6</div><div class="sl">Archetypes</div></div>
+      <div><div class="sv" style="color:#fff">1</div><div class="sl">Mirror Sentence</div></div>
     </div>
   </div>
 </section>
 
-<!-- WHAT YOU GET -->
-<section class="section" style="background:var(--bg)">
+<!-- ARCHETYPES -->
+<section class="section" id="archetypes">
   <div class="ctn">
-    <div class="section-eyebrow">What You Get</div>
-    <h2 class="section-title">Not Just a Report. A Transformation Plan.</h2>
-    <p class="section-sub">Most 360° tools give you a PDF and leave you alone. We give you the roadmap AND walk you through it.</p>
-    <div class="steps-grid" style="grid-template-columns:repeat(3,1fr)">
-      <div class="step-card">
-        <div class="step-icon">📄</div>
-        <h3>Leadership Profile</h3>
-        <p>Scores across 8 dimensions. Self vs peer comparison. Your top strength, biggest blind spot, and hidden strengths peers see that you don't.</p>
+    <div class="section-eye">The 6 Archetypes</div>
+    <h2 class="section-title">Which One Are You?</h2>
+    <p class="section-sub">Every leader is a blend, but one archetype dominates. Yours shapes how you lead, what you avoid, and where you get stuck.</p>
+    <div class="diff-grid" style="gap:16px">
+      <div class="diff-card" style="border-left:3px solid var(--purple);text-align:left">
+        <div style="font-size:28px;margin-bottom:8px">♟️</div>
+        <h3 style="font-size:16px">The Strategist</h3>
+        <p style="margin-bottom:8px">Clear vision, big-picture thinking, decisive.</p>
+        <p style="font-size:12px;color:var(--red)">Risk: People leave feeling unseen.</p>
       </div>
-      <div class="step-card" style="border-color:var(--teal)">
-        <div class="step-icon">🎯</div>
-        <h3>30-Day Coaching Plan</h3>
-        <p>Weekly micro-challenges on WhatsApp tailored to YOUR blind spots. One action per week. Concrete, specific, and trackable.</p>
+      <div class="diff-card" style="border-left:3px solid var(--blue);text-align:left">
+        <div style="font-size:28px;margin-bottom:8px">🛡️</div>
+        <h3 style="font-size:16px">The Shield</h3>
+        <p style="margin-bottom:8px">Fiercely loyal, builds deep trust, protects.</p>
+        <p style="font-size:12px;color:var(--red)">Risk: Absorbs too much, avoids upward conflict.</p>
       </div>
-      <div class="step-card">
-        <div class="step-icon">📈</div>
-        <h3>Before/After Proof</h3>
-        <p>After 30 days, a mini re-assessment shows what changed. Real data, not just feelings. Show your boss the growth.</p>
+      <div class="diff-card" style="border-left:3px solid var(--green);text-align:left">
+        <div style="font-size:28px;margin-bottom:8px">⚙️</div>
+        <h3 style="font-size:16px">The Operator</h3>
+        <p style="margin-bottom:8px">Reliable, execution-focused, gets it done.</p>
+        <p style="font-size:12px;color:var(--red)">Risk: Can't let go. Being the best IC isn't leadership.</p>
+      </div>
+      <div class="diff-card" style="border-left:3px solid var(--amber);text-align:left">
+        <div style="font-size:28px;margin-bottom:8px">🤝</div>
+        <h3 style="font-size:16px">The Connector</h3>
+        <p style="margin-bottom:8px">Empathetic, relationship-driven, team morale.</p>
+        <p style="font-size:12px;color:var(--red)">Risk: Avoids hard decisions. Liked but not always respected.</p>
+      </div>
+      <div class="diff-card" style="border-left:3px solid var(--teal);text-align:left">
+        <div style="font-size:28px;margin-bottom:8px">🏗️</div>
+        <h3 style="font-size:16px">The Builder</h3>
+        <p style="margin-bottom:8px">Systems thinker, scales processes, creates structure.</p>
+        <p style="font-size:12px;color:var(--red)">Risk: Not everything needs a framework.</p>
+      </div>
+      <div class="diff-card" style="border-left:3px solid var(--red);text-align:left">
+        <div style="font-size:28px;margin-bottom:8px">🔥</div>
+        <h3 style="font-size:16px">The Catalyst</h3>
+        <p style="margin-bottom:8px">Inspires change, high energy, bold moves.</p>
+        <p style="font-size:12px;color:var(--red)">Risk: Burns hot then fades. Inspiration without systems = chaos.</p>
       </div>
     </div>
+    <div style="text-align:center;margin-top:36px"><a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" class="btn btn-teal" style="font-size:16px;padding:14px 32px">Discover Your Archetype →</a></div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="section" id="stories">
+<!-- SAMPLE REPORT -->
+<section class="section" style="background:var(--bg)" id="report">
   <div class="ctn">
-    <div class="section-eyebrow">Early Results</div>
-    <h2 class="section-title">What Managers Are Saying</h2>
-    <p class="section-sub">Real feedback from our pilot program.</p>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-header">
-          <div><div class="testi-name">Engineering Manager, Pune</div><div class="testi-role">IT Services, 200 employees</div></div>
-          <div class="testi-badge">Delegation +1.2</div>
-        </div>
-        <p class="testi-text">"I always thought I delegated well. The peer feedback showed my team felt micromanaged. That one insight changed how I run my 1:1s."</p>
+    <div class="section-eye">Sample Report</div>
+    <h2 class="section-title">What You'll Receive</h2>
+    <p class="section-sub">Instantly on WhatsApp. For free. This is a real sample.</p>
+    <div class="sample-report">
+      <div class="report-hdr">
+        <div style="font-size:12px;color:#94A3B8;margin-bottom:4px">⚡ LIGHTNINGCOACH</div>
+        <div style="font-size:22px;font-family:'Instrument Serif',Georgia,serif">Leadership Profile — Rahul V.</div>
+        <div style="font-size:12px;color:#94A3B8;margin-top:4px">Engineering Manager · Assessment Apr 2026</div>
       </div>
-      <div class="testi-card">
-        <div class="testi-header">
-          <div><div class="testi-name">Founder, Jaipur</div><div class="testi-role">D2C Brand, 80 employees</div></div>
-          <div class="testi-badge">Saved 5h/week</div>
+      <div class="report-body">
+        <div class="archetype-result">
+          <div class="big-emoji">⚙️</div>
+          <div>
+            <div class="archetype-label">Primary Archetype</div>
+            <div class="archetype-name">The Operator</div>
+            <div class="archetype-sub">with Shield tendencies</div>
+          </div>
         </div>
-        <p class="testi-text">"The 30-day plan forced me to actually let go. I delegated 3 tasks I'd been holding onto for months. My team stepped up."</p>
-      </div>
-      <div class="testi-card">
-        <div class="testi-header">
-          <div><div class="testi-name">HR Head, Ahmedabad</div><div class="testi-role">Manufacturing, 500 employees</div></div>
-          <div class="testi-badge">10 managers enrolled</div>
+        <div style="display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap">
+          <div class="insight-box" style="flex:1;min-width:180px;background:#D1FAE5">
+            <div class="insight-tag" style="color:#065F46">Top Strength</div>
+            <div class="insight-text" style="color:#065F46"><strong>Accountability</strong> — When things go wrong, you own it. Your team trusts you because you never throw them under the bus.</div>
+          </div>
+          <div class="insight-box" style="flex:1;min-width:180px;background:#FEF3C7">
+            <div class="insight-tag" style="color:#92400E">Blind Spot</div>
+            <div class="insight-text" style="color:#92400E"><strong>Delegation</strong> — You chose to "do it yourself" in 3 of 4 scenarios. Your reliability is also your cage.</div>
+          </div>
         </div>
-        <p class="testi-text">"Finally something our managers actually completed. WhatsApp was the key — no new app, no resistance. The team dashboard showed me patterns I'd never seen."</p>
-      </div>
-      <div class="testi-card">
-        <div class="testi-header">
-          <div><div class="testi-name">Product Lead, Bangalore</div><div class="testi-role">SaaS Startup, 120 employees</div></div>
-          <div class="testi-badge">Promoted in 3 months</div>
+        <div style="margin-bottom:20px">
+          <div style="font-weight:600;font-size:14px;margin-bottom:12px">Dimension Scores</div>
+          <div class="dim-row"><div class="dim-name">Accountability</div><div class="dim-bar"><div class="dim-fill" style="width:90%;background:var(--green)"></div></div><div class="dim-score" style="color:var(--green)">4.5</div></div>
+          <div class="dim-row"><div class="dim-name">Decision Making</div><div class="dim-bar"><div class="dim-fill" style="width:80%;background:var(--teal)"></div></div><div class="dim-score" style="color:var(--teal)">4.0</div></div>
+          <div class="dim-row"><div class="dim-name">Resilience</div><div class="dim-bar"><div class="dim-fill" style="width:70%;background:var(--teal)"></div></div><div class="dim-score" style="color:var(--teal)">3.5</div></div>
+          <div class="dim-row"><div class="dim-name">Communication</div><div class="dim-bar"><div class="dim-fill" style="width:60%;background:var(--amber)"></div></div><div class="dim-score" style="color:var(--amber)">3.0</div></div>
+          <div class="dim-row"><div class="dim-name">People Dev</div><div class="dim-bar"><div class="dim-fill" style="width:50%;background:var(--amber)"></div></div><div class="dim-score" style="color:var(--amber)">2.5</div></div>
+          <div class="dim-row" style="border:none"><div class="dim-name">Delegation</div><div class="dim-bar"><div class="dim-fill" style="width:36%;background:var(--red)"></div></div><div class="dim-score" style="color:var(--red)">1.8</div></div>
         </div>
-        <p class="testi-text">"The blind spot analysis was uncomfortable but accurate. I worked on 'stakeholder communication' for 30 days. My skip-level reviews improved dramatically."</p>
+        <div class="insight-box" style="background:#DBEAFE">
+          <div class="insight-tag" style="color:#1E40AF">Contradiction Detected</div>
+          <div class="insight-text" style="color:#1E40AF">"You want to develop your team (Q7), but when given the chance to delegate (Q3), you chose speed over growth. This gap between intention and instinct is your biggest growth edge."</div>
+        </div>
+        <div class="insight-box" style="background:var(--bg);border:1px solid #99F6E4">
+          <div class="insight-tag" style="color:var(--teal)">This Week's Challenge</div>
+          <div class="insight-text" style="color:#475569">Tomorrow, pick ONE task you'd normally do yourself and hand it to a team member. Tell them: "I trust you with this. Do it your way." Don't check in until they deliver.</div>
+        </div>
+        <div class="mirror-box">
+          <div class="mirror-label">Your Mirror Sentence</div>
+          <p>"You're the person everyone counts on — but you've forgotten that leadership isn't about being the most reliable person in the room. It's about building a room full of reliable people."</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- COMPARISON -->
-<section class="section" style="background:#fff">
-  <div class="ctn">
-    <div class="section-eyebrow">Why LightningCoach</div>
-    <h2 class="section-title">Not Another Survey Tool</h2>
-    <table class="compare-table">
-      <thead><tr><th style="text-align:left">Feature</th><th class="us">⚡ LightningCoach</th><th class="them">Traditional 360°</th><th class="them">Executive Coach</th></tr></thead>
-      <tbody>
-        <tr><td>Time to complete</td><td class="us">10 minutes</td><td class="them">45-60 min survey</td><td class="them">Weeks of scheduling</td></tr>
-        <tr><td>Delivery channel</td><td class="us">WhatsApp</td><td class="them">Web portal</td><td class="them">Zoom/in-person</td></tr>
-        <tr><td>Hindi support</td><td class="us">✓ Native</td><td class="them">✗ English only</td><td class="them">Some coaches</td></tr>
-        <tr><td>Development plan included</td><td class="us">✓ 30-day automated</td><td class="them">✗ Report only</td><td class="them">✓ But manual</td></tr>
-        <tr><td>Price per manager</td><td class="us">Free (pilot)</td><td class="them">₹5,000-15,000</td><td class="them">₹50,000+</td></tr>
-        <tr><td>Before/after measurement</td><td class="us">✓ Built-in</td><td class="them">✗ Separate cost</td><td class="them">✗ Subjective</td></tr>
-      </tbody>
-    </table>
   </div>
 </section>
 
 <!-- PRICING -->
-<section class="section" style="background:var(--bg)" id="pricing">
+<section class="section" id="pricing">
   <div class="ctn">
-    <div class="section-eyebrow">Simple Pricing</div>
-    <h2 class="section-title">100% Free During Pilot. Limited Spots.</h2>
-    <p class="section-sub">We're onboarding our first 20 companies for free. Grab your spot.</p>
-    <div class="pricing-grid">
-      <div class="price-card">
-        <h3 class="price-name">Individual</h3>
-        <div class="price-amount">Free</div>
-        <div class="price-unit">Pilot — limited spots</div>
-        <div class="price-features">
-          <div><span>✓</span> Full 360° assessment</div>
-          <div><span>✓</span> Leadership profile PDF</div>
-          <div><span>✓</span> 30-day coaching plan</div>
-          <div><span>✓</span> Hindi + English</div>
+    <div class="section-eye">Pricing</div>
+    <h2 class="section-title">Start Free. Go Deeper When Ready.</h2>
+    <p class="section-sub">Discover your archetype for free. Upgrade for the full picture.</p>
+    <div class="pricing">
+      <div class="price-card pop">
+        <div class="price-pop">START HERE</div>
+        <h3 class="price-name">Free</h3>
+        <div class="price-amt">₹0</div>
+        <div class="price-unit">Always free</div>
+        <div class="price-feat">
+          <div><span>✓</span> 10 situational scenarios</div>
+          <div><span>✓</span> Leadership archetype reveal</div>
+          <div><span>✓</span> Strengths + blind spot analysis</div>
+          <div><span>✓</span> Contradiction detection</div>
+          <div><span>✓</span> Mirror sentence</div>
+          <div><span>✓</span> Weekly coaching on WhatsApp</div>
         </div>
-        <!-- REPLACE_WHATSAPP_LINK -->
-        <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20the%20free%20assessment" class="btn btn-teal" style="width:100%;justify-content:center">Start Free →</a>
+        <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" class="btn btn-wa" style="width:100%;-webkit-justify-content:center;justify-content:center">Start Free →</a>
       </div>
-      <div class="price-card featured">
-        <div class="price-pop">BEST FOR TEAMS</div>
-        <h3 class="price-name">Team Plan</h3>
-        <div class="price-amount">Free</div>
-        <div class="price-unit">Pilot — up to 10 managers</div>
-        <div class="price-features">
+      <div class="price-card">
+        <h3 class="price-name">Pro Report</h3>
+        <div class="price-amt">₹999</div>
+        <div class="price-unit">One-time</div>
+        <div class="price-feat">
           <div><span>✓</span> Everything in Free</div>
-          <div><span>✓</span> Company dashboard</div>
-          <div><span>✓</span> Team blind spot analysis</div>
-          <div><span>✓</span> Quarterly re-assessments</div>
-          <div><span>✓</span> Anonymized team reports</div>
+          <div><span>✓</span> Deep-dive PDF report (2000+ words)</div>
+          <div><span>✓</span> All 10 dimensions analyzed</div>
+          <div><span>✓</span> 30-day personalized coaching plan</div>
+          <div><span>✓</span> Industry benchmark comparison</div>
+          <div><span>✓</span> Start / Stop / Continue framework</div>
         </div>
-        <!-- REPLACE_WHATSAPP_LINK -->
-        <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20the%20team%20plan%20for%20my%20company" class="btn btn-teal" style="width:100%;justify-content:center">Get Team Plan →</a>
+        <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20the%20Pro%20Report" class="btn btn-teal" style="width:100%;-webkit-justify-content:center;justify-content:center">Get Pro Report →</a>
+      </div>
+      <div class="price-card">
+        <h3 class="price-name">Team Pack</h3>
+        <div class="price-amt">₹4,999</div>
+        <div class="price-unit">10 assessments</div>
+        <div class="price-feat">
+          <div><span>✓</span> Everything in Pro</div>
+          <div><span>✓</span> 10 manager assessments</div>
+          <div><span>✓</span> Team patterns summary</div>
+          <div><span>✓</span> Archetype distribution map</div>
+          <div><span>✓</span> Common blind spots report</div>
+          <div><span>✓</span> Leadership team dynamics</div>
+        </div>
+        <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20the%20Team%20Pack" class="btn btn-outline" style="width:100%;-webkit-justify-content:center;justify-content:center">Get Team Pack →</a>
       </div>
       <div class="price-card">
         <h3 class="price-name">Enterprise</h3>
-        <div class="price-amount">Custom</div>
+        <div class="price-amt" style="font-size:28px">Custom</div>
         <div class="price-unit">50+ managers</div>
-        <div class="price-features">
+        <div class="price-feat">
           <div><span>✓</span> Everything in Team</div>
-          <div><span>✓</span> Custom question bank</div>
-          <div><span>✓</span> HR-tech integration</div>
-          <div><span>✓</span> Human coach sessions</div>
-          <div><span>✓</span> Dedicated support</div>
+          <div><span>✓</span> Full org-wide rollout</div>
+          <div><span>✓</span> Custom scenario design</div>
+          <div><span>✓</span> Company dashboard</div>
+          <div><span>✓</span> Quarterly re-assessments</div>
+          <div><span>✓</span> Dedicated account manager</div>
         </div>
-        <!-- REPLACE_WHATSAPP_LINK -->
-        <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discuss%20enterprise%20pricing" class="btn btn-outline" style="width:100%;justify-content:center">Contact Us →</a>
+        <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discuss%20Enterprise" class="btn btn-outline" style="width:100%;-webkit-justify-content:center;justify-content:center">Contact Sales →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="cta-section">
+<!-- CTA -->
+<section class="cta">
   <div class="ctn">
-    <h2>Your First Assessment Is Free.<br>Find Out What You Don't Know.</h2>
-    <p>10 minutes on WhatsApp. No app. No commitment. Just clarity.</p>
-    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-      <!-- REPLACE_WHATSAPP_LINK -->
-      <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20try%20the%20free%20leadership%20assessment" class="btn btn-accent" style="font-size:17px;padding:16px 36px">Start Free Assessment on WhatsApp →</a>
-    </div>
-    <p style="color:#64748B;font-size:13px;margin-top:16px">Takes 10 minutes • Hindi & English • 100% on WhatsApp</p>
+    <h2>You Already Know Your Strengths.<br>Do You Know Your <em style="color:#A78BFA">Blind Spot?</em></h2>
+    <p>10 minutes. Zero cost. The insight that changes how you lead.</p>
+    <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" class="btn btn-wa" style="font-size:17px;padding:16px 36px">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Discover My Leadership Archetype →
+    </a>
+    <p class="cta-sub">10 minutes · WhatsApp · Hindi + English · Always free</p>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="ctn">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">⚡ LightningCoach</div>
-        <p style="font-size:14px;line-height:1.7;max-width:300px">AI-powered leadership assessment for India's growing companies. Find blind spots. Build better managers.</p>
-      </div>
-      <div>
-        <h4>Product</h4>
-        <a href="#how">How It Works</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#stories">Results</a>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <a href="#">About</a>
-        <a href="#">Blog</a>
-        <a href="#">Contact</a>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <a href="/cdn-cgi/l/email-protection#4f272a2323200f232628273b212621282c202e2c27612c2022"><span class="__cf_email__" data-cfemail="0c64696060634c60656b64786265626b6f636d6f64226f6361">[email&#160;protected]</span></a>
-        <!-- REPLACE_WHATSAPP_LINK -->
-        <a href="https://wa.me/919958355005">WhatsApp Us</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 LightningCoach. All rights reserved.</span>
-      <span>Made with ⚡ in India</span>
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+      <div><div style="font-family:'Instrument Serif',Georgia,serif;font-size:20px;color:#fff">⚡ LightningCoach</div><p style="font-size:12px;margin-top:4px">AI leadership assessment for India's managers.</p></div>
+      <div style="font-size:11px">© 2026 LightningCoach · Made with ⚡ in India</div>
     </div>
   </div>
 </footer>
 
-<!-- WHATSAPP FLOATING BUTTON -->
-<!-- REPLACE_WHATSAPP_LINK -->
-<a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20try%20the%20free%20leadership%20assessment" class="wa-float" title="Start assessment on WhatsApp">
+<a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" class="wa-float" title="Start on WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Sm
+<script>document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'})})});</script>
+</body>
+</html>
