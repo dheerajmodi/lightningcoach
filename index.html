@@ -4,136 +4,163 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>LightningCoach — Discover Your Leadership Archetype in 10 Minutes</title>
-<meta name="description" content="AI-powered situational leadership assessment on WhatsApp. Discover your leadership archetype, strengths, and blind spots. Free. No app needed.">
-<meta property="og:title" content="LightningCoach — What Kind of Leader Are You?">
-<meta property="og:description" content="Situational leadership assessment. 10 real scenarios. Instant AI report. Discover your archetype. Free on WhatsApp.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://lightningcoach.com">
+<meta name="description" content="AI-powered situational leadership assessment. Discover if you're a Strategist, Shield, Operator, Connector, Builder, or Catalyst. Free on WhatsApp.">
+<meta property="og:title" content="LightningCoach — What's Your Leadership Archetype?">
+<meta property="og:description" content="10 real-world scenarios. AI analysis. Instant leadership profile. Free on WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--teal:#0D9488;--teal-dk:#0F766E;--dark:#0F172A;--gray:#64748B;--gray-lt:#94A3B8;--border:#e2e8f0;--bg:#F0FDFA;--green:#10B981;--amber:#F59E0B;--red:#EF4444;--purple:#8B5CF6;--blue:#3B82F6}
-body{font-family:'DM Sans',system-ui,-apple-system,sans-serif;color:var(--dark);background:#fff;-webkit-font-smoothing:antialiased}
+:root{--teal:#0D9488;--teal-dk:#0F766E;--dark:#0F172A;--gray:#64748B;--gray-lt:#94A3B8;--border:#e2e8f0;--bg:#F0FDFA;--green:#10B981;--amber:#F59E0B;--red:#EF4444}
+body{font-family:'DM Sans',system-ui,-apple-system,sans-serif;color:var(--dark);background:#fff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 h1,h2,h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400}
 .ctn{max-width:1100px;margin:0 auto;padding:0 24px}
-.btn{display:-webkit-inline-flex;display:inline-flex;-webkit-align-items:center;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-weight:600;font-size:15px;cursor:pointer;border:none;text-decoration:none;font-family:'DM Sans',sans-serif;-webkit-transition:all .2s;transition:all .2s}
-.btn-wa{background:#25D366;color:#fff}.btn-wa:hover{background:#1da851}
+
+/* BUTTONS — no gap, use margin instead */
+.btn{display:-webkit-inline-flex;display:inline-flex;-webkit-align-items:center;align-items:center;padding:14px 28px;border-radius:10px;font-weight:600;font-size:15px;cursor:pointer;border:none;text-decoration:none;font-family:'DM Sans',sans-serif;-webkit-transition:all .2s;transition:all .2s}
+.btn svg,.btn img{margin-right:8px}
+.btn-wa{background:#25D366;color:#fff}.btn-wa:hover{background:#1da851;-webkit-transform:translateY(-1px);transform:translateY(-1px)}
 .btn-teal{background:var(--teal);color:#fff}.btn-teal:hover{background:var(--teal-dk)}
 .btn-outline{background:transparent;color:var(--teal);border:2px solid var(--teal)}.btn-outline:hover{background:var(--teal);color:#fff}
+.btn-dark{background:var(--dark);color:#fff}.btn-dark:hover{background:#1E293B}
 .btn-sm{padding:10px 20px;font-size:13px}
-.btn-dark{background:rgba(255,255,255,.08);color:#fff;border:none}.btn-dark:hover{background:rgba(255,255,255,.15)}
 
-nav{position:-webkit-sticky;position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;height:64px;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:space-between;justify-content:space-between}
+/* NAV */
+nav{position:-webkit-sticky;position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);border-bottom:1px solid var(--border);padding:0 24px;height:64px;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:space-between;justify-content:space-between}
 .logo{font-family:'Instrument Serif',Georgia,serif;font-size:24px;color:var(--teal);text-decoration:none}
-.nav-r{display:-webkit-flex;display:flex;gap:8px;-webkit-align-items:center;align-items:center}
-.nav-r a{padding:8px 16px;border-radius:8px;font-size:14px;font-weight:500;color:var(--gray);text-decoration:none}
+.nav-r{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center}
+.nav-r a{padding:8px 14px;border-radius:8px;font-size:14px;font-weight:500;color:var(--gray);text-decoration:none;margin-left:4px}
 .nav-r a:hover{color:var(--teal);background:var(--bg)}
-.mob-menu{display:none;background:none;border:none;font-size:24px;cursor:pointer}
+.mob-menu{display:none;background:none;border:none;font-size:24px;cursor:pointer;color:var(--dark)}
 
-.hero{padding:80px 24px 72px;background:var(--dark);color:#fff;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:-webkit-radial-gradient(circle at 30% 50%,rgba(139,92,246,.08) 0%,transparent 50%);background:radial-gradient(circle at 30% 50%,rgba(139,92,246,.08) 0%,transparent 50%)}
-.hero::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:-webkit-radial-gradient(circle at 80% 20%,rgba(20,184,166,.1) 0%,transparent 50%);background:radial-gradient(circle at 80% 20%,rgba(20,184,166,.1) 0%,transparent 50%)}
-.hero-inner{position:relative;display:-webkit-flex;display:flex;gap:64px;-webkit-align-items:center;align-items:center}
-.hero-left{-webkit-flex:1;flex:1}
-.hero-right{-webkit-flex:0 0 360px;flex:0 0 360px}
-.hero-badge{display:inline-flex;gap:6px;background:rgba(139,92,246,.15);padding:6px 16px;border-radius:20px;font-size:13px;margin-bottom:24px;border:1px solid rgba(139,92,246,.2)}
-.hero h1{font-size:46px;line-height:1.08;margin-bottom:20px}
-.hero h1 em{font-style:italic;color:#A78BFA}
-.hero p{font-size:17px;color:#94A3B8;line-height:1.6;margin-bottom:32px;max-width:480px}
-.hero-btns{display:-webkit-flex;display:flex;gap:12px;-webkit-flex-wrap:wrap;flex-wrap:wrap}
-.hero-stats{display:-webkit-flex;display:flex;gap:40px;margin-top:48px;-webkit-flex-wrap:wrap;flex-wrap:wrap}
-.sv{font-size:28px;font-weight:700;font-family:'Instrument Serif',Georgia,serif}
-.sl{font-size:12px;color:#94A3B8;margin-top:2px}
+/* HERO */
+.hero{padding:80px 24px 70px;background:var(--dark);color:#fff;position:relative;overflow:hidden}
+.hero-inner{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;position:relative}
+.hero-left{-webkit-flex:1;flex:1;padding-right:60px}
+.hero-right{-webkit-flex:0 0 380px;flex:0 0 380px}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.06);padding:6px 16px;border-radius:20px;font-size:13px;margin-bottom:24px;border:1px solid rgba(255,255,255,.08)}
+.hero h1{font-size:46px;line-height:1.1;margin-bottom:20px}
+.hero h1 span{color:#5EEAD4}
+.hero-p{font-size:17px;color:#94A3B8;line-height:1.6;margin-bottom:32px;max-width:480px}
+.hero-btns{margin-bottom:0}
+.hero-btns .btn{margin-right:12px;margin-bottom:12px}
+.hero-stats{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;margin-top:48px}
+.hero-stats>div{margin-right:32px;margin-bottom:12px}
+.stat-val{font-size:24px;font-weight:700;font-family:'Instrument Serif',Georgia,serif}
+.stat-label{font-size:11px;color:#94A3B8;margin-top:2px}
 
-.archetype-preview{background:rgba(255,255,255,.03);border-radius:20px;padding:24px;border:1px solid rgba(255,255,255,.06)}
-.arch-card{display:-webkit-flex;display:flex;gap:12px;-webkit-align-items:center;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04)}
-.arch-card:last-child{border:none}
-.arch-emoji{font-size:28px;-webkit-flex-shrink:0;flex-shrink:0;width:40px;text-align:center}
-.arch-info{-webkit-flex:1;flex:1}
-.arch-name{font-size:14px;font-weight:600;margin-bottom:2px}
-.arch-desc{font-size:11px;color:#94A3B8;line-height:1.4}
-.arch-tag{padding:3px 10px;border-radius:10px;font-size:10px;font-weight:600;-webkit-flex-shrink:0;flex-shrink:0}
+/* ARCHETYPE MINI CARDS */
+.arch-grid{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;margin:-4px}
+.arch-card{width:calc(50% - 8px);margin:4px;padding:14px 12px;border-radius:12px;text-align:center;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.arch-emoji{font-size:28px;margin-bottom:4px}
+.arch-name{font-size:12px;font-weight:600;color:#5EEAD4}
+.arch-desc{font-size:10px;color:#94A3B8;margin-top:2px}
 
+/* SECTION */
 .section{padding:80px 24px}
 .section-eye{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--teal);margin-bottom:8px;text-align:center}
 .section-title{font-size:36px;text-align:center;margin-bottom:12px}
 .section-sub{font-size:16px;color:var(--gray);text-align:center;max-width:560px;margin:0 auto 48px}
 
-.diff-grid{display:-webkit-flex;display:flex;gap:20px;-webkit-flex-wrap:wrap;flex-wrap:wrap}
-.diff-card{-webkit-flex:1;flex:1;min-width:200px;padding:28px 24px;border-radius:16px;border:1px solid var(--border);background:#fff}
-.diff-card:hover{-webkit-box-shadow:0 8px 32px rgba(0,0,0,.05);box-shadow:0 8px 32px rgba(0,0,0,.05)}
-.diff-icon{font-size:32px;margin-bottom:14px}
-.diff-card h3{font-size:18px;margin-bottom:6px}
-.diff-card p{font-size:13px;color:var(--gray);line-height:1.6}
+/* DIFFERENCE */
+.diff-grid{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;margin:0 -12px}
+.diff-card{-webkit-flex:1;flex:1;min-width:280px;padding:0 12px;margin-bottom:24px}
+.diff-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid}
+.diff-list{list-style:none}
+.diff-list li{padding:8px 0;font-size:14px;color:#475569}
+.diff-list li span{margin-right:8px}
 
-.scenario-demo{max-width:500px;margin:0 auto}
-.scenario-box{background:#fff;border-radius:16px;padding:28px;border:1px solid var(--border);margin-bottom:24px}
-.scenario-tag{font-size:11px;font-weight:700;color:var(--teal);margin-bottom:8px}
-.scenario-q{font-size:15px;font-weight:500;line-height:1.5;margin-bottom:16px}
-.scenario-opt{display:-webkit-flex;display:flex;gap:10px;-webkit-align-items:start;align-items:start;padding:10px 14px;border-radius:10px;border:1px solid var(--border);margin-bottom:8px;font-size:13px;line-height:1.5;cursor:pointer;-webkit-transition:all .15s;transition:all .15s}
-.scenario-opt:hover{border-color:var(--teal);background:var(--bg)}
-.scenario-opt .letter{font-weight:700;color:var(--teal);-webkit-flex-shrink:0;flex-shrink:0;width:20px}
-.scenario-note{font-size:12px;color:var(--gray-lt);text-align:center;font-style:italic}
+/* STEPS */
+.steps{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;margin:0 -10px}
+.step{-webkit-flex:1;flex:1;min-width:200px;background:#fff;border-radius:16px;padding:28px 20px;text-align:center;border:1px solid var(--border);margin:0 10px 20px}
+.step-icon{font-size:32px;margin-bottom:12px}
+.step-num{font-size:11px;font-weight:700;color:var(--teal);margin-bottom:6px}
+.step h3{font-size:18px;margin-bottom:6px}
+.step p{font-size:13px;color:var(--gray);line-height:1.5}
 
-.metrics{padding:56px 24px;background:var(--teal-dk);color:#fff}
-.m-grid{display:-webkit-flex;display:flex;gap:32px;text-align:center;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-justify-content:center;justify-content:center}
-.m-grid>div{-webkit-flex:1;flex:1;min-width:140px}
+/* SAMPLE QUESTION */
+.sq-card{max-width:500px;margin:0 auto;background:#fff;border-radius:16px;padding:28px;border:1px solid var(--border)}
+.sq-label{font-size:11px;font-weight:700;color:var(--teal);margin-bottom:8px}
+.sq-text{font-size:15px;font-weight:500;line-height:1.5;margin-bottom:16px}
+.sq-opt{padding:12px 16px;border-radius:10px;border:1.5px solid var(--border);font-size:13px;color:#475569;margin-bottom:8px;cursor:pointer;-webkit-transition:all .15s;transition:all .15s}
+.sq-opt:hover{border-color:var(--teal);background:var(--bg)}
+.sq-opt .letter{font-weight:700;color:var(--teal);margin-right:10px}
 
-.sample-report{max-width:640px;margin:0 auto}
-.report-hdr{background:var(--dark);border-radius:16px 16px 0 0;padding:28px;color:#fff}
-.report-body{background:#fff;border-radius:0 0 16px 16px;padding:28px;border:1px solid var(--border);border-top:none}
-.archetype-result{display:-webkit-flex;display:flex;gap:16px;-webkit-align-items:center;align-items:center;padding:20px;background:var(--bg);border-radius:12px;margin-bottom:20px;border:1px solid #99F6E4}
-.archetype-result .big-emoji{font-size:40px}
-.archetype-label{font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:1px}
-.archetype-name{font-size:22px;font-family:'Instrument Serif',Georgia,serif}
-.archetype-sub{font-size:12px;color:var(--gray);margin-top:2px}
-.insight-box{padding:16px;border-radius:10px;margin-bottom:12px}
-.insight-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
-.insight-text{font-size:13px;line-height:1.6}
-.dim-row{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid #f1f5f9}
-.dim-name{-webkit-flex:0 0 120px;flex:0 0 120px;font-size:12px;font-weight:600}
-.dim-bar{-webkit-flex:1;flex:1;height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden}
+/* ARCHETYPES FULL */
+.arch-full{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;margin:0 -8px}
+.arch-full-card{width:calc(33.333% - 16px);margin:8px;background:#fff;border-radius:16px;padding:24px 20px;border:1px solid var(--border);text-align:center}
+.arch-full-card .ae{font-size:40px;margin-bottom:8px}
+.arch-full-card h3{font-size:18px;margin-bottom:4px}
+.arch-full-card .as{font-size:12px;color:var(--teal);font-weight:600;margin-bottom:8px}
+.arch-full-card p{font-size:12px;color:var(--gray);line-height:1.5}
+
+/* METRICS */
+.metrics{padding:60px 24px;background:var(--teal-dk);color:#fff}
+.m-grid{display:-webkit-flex;display:flex;text-align:center;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-justify-content:center;justify-content:center}
+.m-grid>div{-webkit-flex:1;flex:1;min-width:140px;padding:0 16px;margin-bottom:16px}
+.m-val{font-size:40px;font-weight:700;font-family:'Instrument Serif',Georgia,serif}
+.m-label{font-size:13px;color:rgba(255,255,255,.6);margin-top:4px}
+
+/* REPORT SAMPLE */
+.report-card{max-width:600px;margin:0 auto;background:#fff;border-radius:16px;padding:32px;border:1px solid var(--border)}
+.arch-banner{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;padding:20px;border-radius:12px;margin-bottom:24px;background:linear-gradient(135deg,#F0FDFA,#CCFBF1)}
+.arch-banner .ab-emoji{font-size:48px;margin-right:16px}
+.arch-banner .ab-info{-webkit-flex:1;flex:1}
+.arch-banner .ab-name{font-size:24px;font-family:'Instrument Serif',Georgia,serif;color:var(--teal-dk)}
+.arch-banner .ab-sub{font-size:13px;color:var(--gray);margin-top:2px}
+.arch-banner .ab-score{text-align:center;margin-left:16px}
+.arch-banner .ab-score-val{font-size:28px;font-weight:700;color:var(--teal);font-family:'Instrument Serif',Georgia,serif}
+.arch-banner .ab-score-label{font-size:10px;color:var(--gray)}
+
+.dim-row{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;padding:8px 0;border-bottom:1px solid #f1f5f9}
+.dim-name{width:120px;font-size:12px;font-weight:600;-webkit-flex-shrink:0;flex-shrink:0}
+.dim-bar{-webkit-flex:1;flex:1;height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden;margin:0 12px}
 .dim-fill{height:100%;border-radius:4px}
-.dim-score{-webkit-flex:0 0 36px;flex:0 0 36px;font-size:12px;font-weight:600;text-align:right}
+.dim-score{width:35px;font-size:12px;font-weight:600;text-align:right;-webkit-flex-shrink:0;flex-shrink:0}
 
-.pricing{display:-webkit-flex;display:flex;gap:20px;max-width:900px;margin:0 auto;-webkit-flex-wrap:wrap;flex-wrap:wrap}
-.price-card{-webkit-flex:1;flex:1;min-width:200px;background:#fff;border-radius:16px;padding:28px 24px;border:1px solid var(--border);position:relative}
+/* PRICING */
+.pricing{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;max-width:900px;margin:0 auto -20px}
+.price-card{-webkit-flex:1;flex:1;min-width:200px;background:#fff;border-radius:16px;padding:28px 20px;border:1px solid var(--border);text-align:center;position:relative;margin:0 10px 20px}
 .price-card.pop{border:2px solid var(--teal)}
 .price-pop{position:absolute;top:-12px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);background:var(--teal);color:#fff;padding:4px 14px;border-radius:12px;font-size:11px;font-weight:700;white-space:nowrap}
-.price-name{font-size:20px;margin-bottom:6px;text-align:center}
-.price-amt{font-size:36px;font-weight:700;font-family:'Instrument Serif',Georgia,serif;color:var(--teal);text-align:center;margin-bottom:2px}
-.price-unit{font-size:12px;color:var(--gray-lt);text-align:center;margin-bottom:20px}
-.price-feat{border-top:1px solid var(--border);padding-top:16px;margin-bottom:20px}
-.price-feat div{display:-webkit-flex;display:flex;gap:8px;margin-bottom:8px;font-size:13px;color:#475569}
-.price-feat span{color:var(--green);font-weight:700;-webkit-flex-shrink:0;flex-shrink:0}
+.price-name{font-size:20px;margin-bottom:6px}
+.price-amt{font-size:36px;font-weight:700;font-family:'Instrument Serif',Georgia,serif;color:var(--teal);margin-bottom:2px}
+.price-unit{font-size:12px;color:var(--gray-lt);margin-bottom:16px}
+.price-feat{text-align:left;border-top:1px solid var(--border);padding-top:14px;margin-bottom:20px}
+.price-feat div{margin-bottom:6px;font-size:12px;color:#475569}
+.price-feat div span{color:var(--green);font-weight:700;margin-right:6px}
 
+/* CTA */
 .cta{padding:80px 24px;background:var(--dark);color:#fff;text-align:center}
 .cta h2{font-size:38px;margin-bottom:16px}
 .cta p{color:#94A3B8;font-size:17px;margin-bottom:32px}
-.cta-sub{color:var(--gray);font-size:13px;margin-top:16px}
 
 footer{background:var(--dark);color:var(--gray-lt);padding:32px 24px 16px;border-top:1px solid #1E293B}
+.f-inner{display:-webkit-flex;display:flex;-webkit-justify-content:space-between;justify-content:space-between;-webkit-align-items:center;align-items:center;-webkit-flex-wrap:wrap;flex-wrap:wrap}
 
-.wa-float{position:fixed;bottom:24px;right:24px;z-index:99;width:60px;height:60px;border-radius:30px;background:#25D366;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;-webkit-box-shadow:0 4px 16px rgba(37,211,102,.4);box-shadow:0 4px 16px rgba(37,211,102,.4);cursor:pointer;text-decoration:none}
+/* FLOAT */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:99;width:60px;height:60px;border-radius:30px;background:#25D366;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.4);-webkit-box-shadow:0 4px 16px rgba(37,211,102,.4);cursor:pointer;text-decoration:none}
 .wa-float:hover{-webkit-transform:scale(1.1);transform:scale(1.1)}
 .wa-float svg{width:32px;height:32px;fill:#fff}
 
-.mirror-box{background:linear-gradient(135deg,#0F172A,#1E293B);border-radius:12px;padding:24px;margin-top:20px;border:1px solid rgba(255,255,255,.06)}
-.mirror-box p{font-size:15px;color:#e2e8f0;font-style:italic;line-height:1.6;text-align:center}
-.mirror-label{font-size:10px;color:#94A3B8;text-align:center;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
-
 @media(max-width:768px){
   .hero-inner{-webkit-flex-direction:column;flex-direction:column;text-align:center}
+  .hero-left{padding-right:0}
   .hero-right{display:none}
-  .hero-stats{-webkit-justify-content:center;justify-content:center;gap:24px}
   .hero h1{font-size:32px}
-  .hero-btns{-webkit-justify-content:center;justify-content:center}
+  .hero-stats{-webkit-justify-content:center;justify-content:center}
+  .hero-btns{text-align:center}
   .section-title{font-size:28px}
-  .diff-grid,.pricing,.m-grid{-webkit-flex-direction:column;flex-direction:column}
+  .steps{-webkit-flex-direction:column;flex-direction:column}
+  .pricing{-webkit-flex-direction:column;flex-direction:column}
+  .diff-grid{-webkit-flex-direction:column;flex-direction:column}
+  .arch-full-card{width:calc(50% - 16px)}
   .nav-r{display:none}
   .mob-menu{display:block}
+}
+@media(max-width:480px){
+  .arch-full-card{width:100%;margin:8px 0}
 }
 </style>
 </head>
@@ -145,237 +172,243 @@ footer{background:var(--dark);color:var(--gray-lt);padding:32px 24px 16px;border
   <div class="nav-r">
     <a href="#how">How It Works</a>
     <a href="#archetypes">Archetypes</a>
-    <a href="#report">Sample Report</a>
+    <a href="#methodology">Our Science</a>
     <a href="#pricing">Pricing</a>
-    <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" class="btn btn-wa btn-sm">Discover Your Archetype</a>
+    <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" class="btn btn-wa btn-sm" style="margin-left:8px">Discover My Archetype</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="ctn">
     <div class="hero-inner">
       <div class="hero-left">
-        <div class="hero-badge">♟️ Situational Leadership Assessment</div>
-        <h1>Every Leader Has a<br><em>Blind Spot.</em><br>Find Yours in<br>10 Minutes.</h1>
-        <p>Not another self-rating quiz. 10 real workplace scenarios. No right answers — only patterns. Our AI analyzes your decisions and reveals the leader you actually are, not the one you think you are.</p>
+        <div class="hero-badge">⚡ Free · 10 minutes · No app needed</div>
+        <h1>Every Leader Has a<br><span>Leadership Archetype</span><br>What's Yours?</h1>
+        <p class="hero-p">10 real-world scenarios. No right answers — only patterns. Our AI analyzes your decisions to reveal your leadership style, strengths, and the blind spots nobody tells you about.</p>
         <div class="hero-btns">
           <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" class="btn btn-wa" style="font-size:17px;padding:16px 32px">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" style="margin-right:8px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Discover My Archetype →
           </a>
-          <a href="#how" class="btn btn-dark">See How It Works</a>
+          <a href="#archetypes" class="btn" style="background:rgba(255,255,255,.06);color:#fff;border:none">See All 6 Archetypes</a>
         </div>
         <div class="hero-stats">
-          <div><div class="sv">Free</div><div class="sl">Always</div></div>
-          <div><div class="sv">10 min</div><div class="sl">On WhatsApp</div></div>
-          <div><div class="sv">6</div><div class="sl">Archetypes</div></div>
-          <div><div class="sv">Instant</div><div class="sl">AI Report</div></div>
+          <div><div class="stat-val">10</div><div class="stat-label">Scenarios</div></div>
+          <div><div class="stat-val">6</div><div class="stat-label">Archetypes</div></div>
+          <div><div class="stat-val">Instant</div><div class="stat-label">AI Analysis</div></div>
+          <div><div class="stat-val">Free</div><div class="stat-label">Always</div></div>
         </div>
       </div>
       <div class="hero-right">
-        <div class="archetype-preview">
-          <div style="font-size:12px;color:#94A3B8;margin-bottom:14px;font-weight:600;letter-spacing:1px">THE 6 LEADERSHIP ARCHETYPES</div>
-          <div class="arch-card"><div class="arch-emoji">♟️</div><div class="arch-info"><div class="arch-name">The Strategist</div><div class="arch-desc">Clear vision, big-picture thinker. Risk: disconnected from people.</div></div></div>
-          <div class="arch-card"><div class="arch-emoji">🛡️</div><div class="arch-info"><div class="arch-name">The Shield</div><div class="arch-desc">Loyal protector, trust builder. Risk: absorbs too much, burns out.</div></div></div>
-          <div class="arch-card"><div class="arch-emoji">⚙️</div><div class="arch-info"><div class="arch-name">The Operator</div><div class="arch-desc">Reliable executor, gets it done. Risk: micromanages, can't let go.</div></div></div>
-          <div class="arch-card"><div class="arch-emoji">🤝</div><div class="arch-info"><div class="arch-name">The Connector</div><div class="arch-desc">Empathetic, loved by team. Risk: avoids hard decisions.</div></div></div>
-          <div class="arch-card"><div class="arch-emoji">🏗️</div><div class="arch-info"><div class="arch-name">The Builder</div><div class="arch-desc">Systems thinker, scales teams. Risk: over-systematizes, rigid.</div></div></div>
-          <div class="arch-card"><div class="arch-emoji">🔥</div><div class="arch-info"><div class="arch-name">The Catalyst</div><div class="arch-desc">Inspires change, high energy. Risk: inconsistent, exhausts team.</div></div></div>
+        <div class="arch-grid">
+          <div class="arch-card"><div class="arch-emoji">♟️</div><div class="arch-name">Strategist</div><div class="arch-desc">Vision-driven</div></div>
+          <div class="arch-card"><div class="arch-emoji">🛡️</div><div class="arch-name">Shield</div><div class="arch-desc">Team protector</div></div>
+          <div class="arch-card"><div class="arch-emoji">⚙️</div><div class="arch-name">Operator</div><div class="arch-desc">Execution master</div></div>
+          <div class="arch-card"><div class="arch-emoji">🤝</div><div class="arch-name">Connector</div><div class="arch-desc">Relationship builder</div></div>
+          <div class="arch-card"><div class="arch-emoji">🏗️</div><div class="arch-name">Builder</div><div class="arch-desc">Systems thinker</div></div>
+          <div class="arch-card"><div class="arch-emoji">🔥</div><div class="arch-name">Catalyst</div><div class="arch-desc">Change driver</div></div>
         </div>
+        <div style="text-align:center;margin-top:16px;font-size:13px;color:#94A3B8">Which one are you?</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY DIFFERENT -->
-<section class="section" id="how">
+<section class="section" style="background:#fff">
   <div class="ctn">
     <div class="section-eye">Why This Is Different</div>
-    <h2 class="section-title">Not Another Self-Rating Quiz</h2>
-    <p class="section-sub">Most leadership assessments ask you to rate yourself. You already know what you'll say. Ours puts you in real situations and reads your instincts.</p>
+    <h2 class="section-title">This Isn't a Quiz. It's a Mirror.</h2>
+    <p class="section-sub">Most assessments ask you to rate yourself. That's like asking a fish to describe water.</p>
     <div class="diff-grid">
       <div class="diff-card">
-        <div class="diff-icon">🎭</div>
-        <h3>Scenarios, Not Scales</h3>
-        <p>Real workplace situations with 4 choices. No "right" answer. Your instinct reveals more than your self-image.</p>
+        <div class="diff-label" style="color:var(--gray-lt);border-color:var(--border)">Typical assessments</div>
+        <ul class="diff-list">
+          <li><span style="color:var(--red)">✗</span> "Rate your delegation 1-5" — you'll overrate yourself</li>
+          <li><span style="color:var(--red)">✗</span> Generic results that apply to everyone</li>
+          <li><span style="color:var(--red)">✗</span> No actionable next step</li>
+        </ul>
       </div>
       <div class="diff-card">
-        <div class="diff-icon">🔍</div>
-        <h3>Contradiction Detection</h3>
-        <p>"You say you delegate well, but when pressed, you chose to do it yourself." We catch the gap between intention and instinct.</p>
-      </div>
-      <div class="diff-card">
-        <div class="diff-icon">🧬</div>
-        <h3>Archetype Mapping</h3>
-        <p>Not a generic score. You get a specific leadership archetype — a pattern that explains your strengths AND why certain things keep going wrong.</p>
-      </div>
-      <div class="diff-card">
-        <div class="diff-icon">🪞</div>
-        <h3>The Mirror Sentence</h3>
-        <p>One line at the end that makes you feel deeply seen. It's the thing you'll screenshot and think about for days.</p>
+        <div class="diff-label" style="color:var(--teal);border-color:var(--teal)">⚡ LightningCoach</div>
+        <ul class="diff-list">
+          <li><span style="color:var(--green)">✓</span> Real scenarios — reveals your instincts, not opinions</li>
+          <li><span style="color:var(--green)">✓</span> AI detects contradictions in your answers</li>
+          <li><span style="color:var(--green)">✓</span> One specific action for THIS WEEK</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SCENARIO PREVIEW -->
-<section class="section" style="background:var(--bg)">
+<section class="section" style="background:var(--bg)" id="how">
   <div class="ctn">
-    <div class="section-eye">Try a Sample Question</div>
-    <h2 class="section-title">What Would You Do?</h2>
-    <p class="section-sub">This is what the assessment feels like. No right answer — just your instinct.</p>
-    <div class="scenario-demo">
-      <div class="scenario-box">
-        <div class="scenario-tag">Q3/10 — THE DELEGATION DILEMMA</div>
-        <div class="scenario-q">You have a task you could do in 2 hours, but delegating it would take 4 hours (including explaining and reviewing). Deadline is tomorrow. You:</div>
-        <div class="scenario-opt" onclick="this.style.borderColor='#0D9488';this.style.background='#F0FDFA'"><div class="letter">A</div><div>Do it yourself — it's faster and quality will be better</div></div>
-        <div class="scenario-opt" onclick="this.style.borderColor='#0D9488';this.style.background='#F0FDFA'"><div class="letter">B</div><div>Delegate anyway — the learning opportunity is worth the extra time</div></div>
-        <div class="scenario-opt" onclick="this.style.borderColor='#0D9488';this.style.background='#F0FDFA'"><div class="letter">C</div><div>Do it yourself but schedule time next week to teach someone</div></div>
-        <div class="scenario-opt" onclick="this.style.borderColor='#0D9488';this.style.background='#F0FDFA'"><div class="letter">D</div><div>Split it — do the critical parts, delegate the rest</div></div>
-      </div>
-      <p class="scenario-note">Every answer maps to your leadership pattern. A = Operator. B = Builder. C = Strategist. D = Balanced. There's no wrong choice — only your truth.</p>
-      <div style="text-align:center;margin-top:24px"><a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" class="btn btn-wa">Take the Full Assessment →</a></div>
+    <div class="section-eye">How It Works</div>
+    <h2 class="section-title">Three Steps. All on WhatsApp.</h2>
+    <div class="steps">
+      <div class="step"><div class="step-icon">📱</div><div class="step-num">STEP 1</div><h3>Open WhatsApp</h3><p>Click the button. AI presents 10 real workplace scenarios. Pick what you'd actually do.</p></div>
+      <div class="step"><div class="step-icon">🧠</div><div class="step-num">STEP 2</div><h3>AI Finds Patterns</h3><p>Cross-references your choices, detects contradictions, maps your leadership archetype.</p></div>
+      <div class="step"><div class="step-icon">⚡</div><div class="step-num">STEP 3</div><h3>Get Your Profile</h3><p>Instant report: archetype, strengths, blind spots, and one action for this week.</p></div>
     </div>
   </div>
 </section>
 
-<!-- METRICS -->
+<section class="section">
+  <div class="ctn">
+    <div class="section-eye">Preview</div>
+    <h2 class="section-title">There Are No Right Answers</h2>
+    <p class="section-sub">Each option reveals something different about your leadership instincts.</p>
+    <div class="sq-card">
+      <div class="sq-label">Q1/10 — The Underperformer</div>
+      <div class="sq-text">A team member who was once your best performer has been slipping. Work is late, quality dropped. You:</div>
+      <div class="sq-opt" onclick="this.style.borderColor='#0D9488';this.style.background='#F0FDFA'"><span class="letter">A</span> Schedule a private 1:1 to listen without judgment</div>
+      <div class="sq-opt" onclick="this.style.borderColor='#0D9488';this.style.background='#F0FDFA'"><span class="letter">B</span> Review their data first, then present evidence</div>
+      <div class="sq-opt" onclick="this.style.borderColor='#0D9488';this.style.background='#F0FDFA'"><span class="letter">C</span> Set a clear improvement deadline with consequences</div>
+      <div class="sq-opt" onclick="this.style.borderColor='#0D9488';this.style.background='#F0FDFA'"><span class="letter">D</span> Ask colleagues if they've noticed anything</div>
+    </div>
+    <div style="text-align:center;margin-top:16px;font-size:13px;color:var(--gray)">Each answer maps to a different archetype. The AI analyzes all 10 together.</div>
+  </div>
+</section>
+
 <section class="metrics">
   <div class="ctn">
     <div class="m-grid">
-      <div><div class="sv" style="color:#fff">10</div><div class="sl">Real Scenarios</div></div>
-      <div><div class="sv" style="color:#fff">8</div><div class="sl">Leadership Dimensions</div></div>
-      <div><div class="sv" style="color:#fff">6</div><div class="sl">Archetypes</div></div>
-      <div><div class="sv" style="color:#fff">1</div><div class="sl">Mirror Sentence</div></div>
+      <div><div class="m-val">10</div><div class="m-label">Scenarios</div></div>
+      <div><div class="m-val">8</div><div class="m-label">Dimensions Measured</div></div>
+      <div><div class="m-val">30 sec</div><div class="m-label">Report Generation</div></div>
+      <div><div class="m-val">6</div><div class="m-label">Leadership Archetypes</div></div>
     </div>
   </div>
 </section>
 
-<!-- ARCHETYPES -->
-<section class="section" id="archetypes">
+<section class="section" style="background:var(--bg)" id="archetypes">
   <div class="ctn">
     <div class="section-eye">The 6 Archetypes</div>
-    <h2 class="section-title">Which One Are You?</h2>
-    <p class="section-sub">Every leader is a blend, but one archetype dominates. Yours shapes how you lead, what you avoid, and where you get stuck.</p>
-    <div class="diff-grid" style="gap:16px">
-      <div class="diff-card" style="border-left:3px solid var(--purple);text-align:left">
-        <div style="font-size:28px;margin-bottom:8px">♟️</div>
-        <h3 style="font-size:16px">The Strategist</h3>
-        <p style="margin-bottom:8px">Clear vision, big-picture thinking, decisive.</p>
-        <p style="font-size:12px;color:var(--red)">Risk: People leave feeling unseen.</p>
-      </div>
-      <div class="diff-card" style="border-left:3px solid var(--blue);text-align:left">
-        <div style="font-size:28px;margin-bottom:8px">🛡️</div>
-        <h3 style="font-size:16px">The Shield</h3>
-        <p style="margin-bottom:8px">Fiercely loyal, builds deep trust, protects.</p>
-        <p style="font-size:12px;color:var(--red)">Risk: Absorbs too much, avoids upward conflict.</p>
-      </div>
-      <div class="diff-card" style="border-left:3px solid var(--green);text-align:left">
-        <div style="font-size:28px;margin-bottom:8px">⚙️</div>
-        <h3 style="font-size:16px">The Operator</h3>
-        <p style="margin-bottom:8px">Reliable, execution-focused, gets it done.</p>
-        <p style="font-size:12px;color:var(--red)">Risk: Can't let go. Being the best IC isn't leadership.</p>
-      </div>
-      <div class="diff-card" style="border-left:3px solid var(--amber);text-align:left">
-        <div style="font-size:28px;margin-bottom:8px">🤝</div>
-        <h3 style="font-size:16px">The Connector</h3>
-        <p style="margin-bottom:8px">Empathetic, relationship-driven, team morale.</p>
-        <p style="font-size:12px;color:var(--red)">Risk: Avoids hard decisions. Liked but not always respected.</p>
-      </div>
-      <div class="diff-card" style="border-left:3px solid var(--teal);text-align:left">
-        <div style="font-size:28px;margin-bottom:8px">🏗️</div>
-        <h3 style="font-size:16px">The Builder</h3>
-        <p style="margin-bottom:8px">Systems thinker, scales processes, creates structure.</p>
-        <p style="font-size:12px;color:var(--red)">Risk: Not everything needs a framework.</p>
-      </div>
-      <div class="diff-card" style="border-left:3px solid var(--red);text-align:left">
-        <div style="font-size:28px;margin-bottom:8px">🔥</div>
-        <h3 style="font-size:16px">The Catalyst</h3>
-        <p style="margin-bottom:8px">Inspires change, high energy, bold moves.</p>
-        <p style="font-size:12px;color:var(--red)">Risk: Burns hot then fades. Inspiration without systems = chaos.</p>
-      </div>
+    <h2 class="section-title">Which Leader Are You?</h2>
+    <p class="section-sub">Every leader is a blend — but one archetype dominates.</p>
+    <div class="arch-full">
+      <div class="arch-full-card"><div class="ae">♟️</div><h3>The Strategist</h3><div class="as">Vision + Clarity</div><p>Sees the big picture. Makes bold calls. Risk: may miss the human impact.</p></div>
+      <div class="arch-full-card"><div class="ae">🛡️</div><h3>The Shield</h3><div class="as">Loyalty + Protection</div><p>Protects the team fiercely. Risk: absorbs too much, may burn out.</p></div>
+      <div class="arch-full-card"><div class="ae">⚙️</div><h3>The Operator</h3><div class="as">Execution + Reliability</div><p>Gets things done. Risk: struggles to let go and develop others.</p></div>
+      <div class="arch-full-card"><div class="ae">🤝</div><h3>The Connector</h3><div class="as">Empathy + Relationships</div><p>Builds deep trust. Risk: avoids hard conversations for harmony.</p></div>
+      <div class="arch-full-card"><div class="ae">🏗️</div><h3>The Builder</h3><div class="as">Systems + Scale</div><p>Creates lasting structures. Risk: over-processes, loses human element.</p></div>
+      <div class="arch-full-card"><div class="ae">🔥</div><h3>The Catalyst</h3><div class="as">Energy + Change</div><p>Inspires action. Risk: burns bright then fades without follow-through.</p></div>
     </div>
-    <div style="text-align:center;margin-top:36px"><a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" class="btn btn-teal" style="font-size:16px;padding:14px 32px">Discover Your Archetype →</a></div>
   </div>
 </section>
 
-<!-- SAMPLE REPORT -->
-<section class="section" style="background:var(--bg)" id="report">
+<section class="section">
   <div class="ctn">
     <div class="section-eye">Sample Report</div>
     <h2 class="section-title">What You'll Receive</h2>
-    <p class="section-sub">Instantly on WhatsApp. For free. This is a real sample.</p>
-    <div class="sample-report">
-      <div class="report-hdr">
-        <div style="font-size:12px;color:#94A3B8;margin-bottom:4px">⚡ LIGHTNINGCOACH</div>
-        <div style="font-size:22px;font-family:'Instrument Serif',Georgia,serif">Leadership Profile — Rahul V.</div>
-        <div style="font-size:12px;color:#94A3B8;margin-top:4px">Engineering Manager · Assessment Apr 2026</div>
+    <div class="report-card">
+      <div class="arch-banner">
+        <div class="ab-emoji">⚙️</div>
+        <div class="ab-info"><div class="ab-name">The Operator</div><div class="ab-sub">with Shield tendencies</div></div>
+        <div class="ab-score"><div class="ab-score-val">3.6</div><div class="ab-score-label">Overall</div></div>
       </div>
-      <div class="report-body">
-        <div class="archetype-result">
-          <div class="big-emoji">⚙️</div>
-          <div>
-            <div class="archetype-label">Primary Archetype</div>
-            <div class="archetype-name">The Operator</div>
-            <div class="archetype-sub">with Shield tendencies</div>
-          </div>
-        </div>
-        <div style="display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap">
-          <div class="insight-box" style="flex:1;min-width:180px;background:#D1FAE5">
-            <div class="insight-tag" style="color:#065F46">Top Strength</div>
-            <div class="insight-text" style="color:#065F46"><strong>Accountability</strong> — When things go wrong, you own it. Your team trusts you because you never throw them under the bus.</div>
-          </div>
-          <div class="insight-box" style="flex:1;min-width:180px;background:#FEF3C7">
-            <div class="insight-tag" style="color:#92400E">Blind Spot</div>
-            <div class="insight-text" style="color:#92400E"><strong>Delegation</strong> — You chose to "do it yourself" in 3 of 4 scenarios. Your reliability is also your cage.</div>
-          </div>
-        </div>
-        <div style="margin-bottom:20px">
-          <div style="font-weight:600;font-size:14px;margin-bottom:12px">Dimension Scores</div>
-          <div class="dim-row"><div class="dim-name">Accountability</div><div class="dim-bar"><div class="dim-fill" style="width:90%;background:var(--green)"></div></div><div class="dim-score" style="color:var(--green)">4.5</div></div>
-          <div class="dim-row"><div class="dim-name">Decision Making</div><div class="dim-bar"><div class="dim-fill" style="width:80%;background:var(--teal)"></div></div><div class="dim-score" style="color:var(--teal)">4.0</div></div>
-          <div class="dim-row"><div class="dim-name">Resilience</div><div class="dim-bar"><div class="dim-fill" style="width:70%;background:var(--teal)"></div></div><div class="dim-score" style="color:var(--teal)">3.5</div></div>
-          <div class="dim-row"><div class="dim-name">Communication</div><div class="dim-bar"><div class="dim-fill" style="width:60%;background:var(--amber)"></div></div><div class="dim-score" style="color:var(--amber)">3.0</div></div>
-          <div class="dim-row"><div class="dim-name">People Dev</div><div class="dim-bar"><div class="dim-fill" style="width:50%;background:var(--amber)"></div></div><div class="dim-score" style="color:var(--amber)">2.5</div></div>
-          <div class="dim-row" style="border:none"><div class="dim-name">Delegation</div><div class="dim-bar"><div class="dim-fill" style="width:36%;background:var(--red)"></div></div><div class="dim-score" style="color:var(--red)">1.8</div></div>
-        </div>
-        <div class="insight-box" style="background:#DBEAFE">
-          <div class="insight-tag" style="color:#1E40AF">Contradiction Detected</div>
-          <div class="insight-text" style="color:#1E40AF">"You want to develop your team (Q7), but when given the chance to delegate (Q3), you chose speed over growth. This gap between intention and instinct is your biggest growth edge."</div>
-        </div>
-        <div class="insight-box" style="background:var(--bg);border:1px solid #99F6E4">
-          <div class="insight-tag" style="color:var(--teal)">This Week's Challenge</div>
-          <div class="insight-text" style="color:#475569">Tomorrow, pick ONE task you'd normally do yourself and hand it to a team member. Tell them: "I trust you with this. Do it your way." Don't check in until they deliver.</div>
-        </div>
-        <div class="mirror-box">
-          <div class="mirror-label">Your Mirror Sentence</div>
-          <p>"You're the person everyone counts on — but you've forgotten that leadership isn't about being the most reliable person in the room. It's about building a room full of reliable people."</p>
-        </div>
+      <div class="dim-row"><div class="dim-name">Decision Making</div><div class="dim-bar"><div class="dim-fill" style="width:80%;background:var(--teal)"></div></div><div class="dim-score" style="color:var(--teal)">4.0</div></div>
+      <div class="dim-row"><div class="dim-name">Delegation</div><div class="dim-bar"><div class="dim-fill" style="width:36%;background:var(--red)"></div></div><div class="dim-score" style="color:var(--red)">1.8</div></div>
+      <div class="dim-row"><div class="dim-name">Communication</div><div class="dim-bar"><div class="dim-fill" style="width:70%;background:var(--teal)"></div></div><div class="dim-score" style="color:var(--teal)">3.5</div></div>
+      <div class="dim-row"><div class="dim-name">Strategic Clarity</div><div class="dim-bar"><div class="dim-fill" style="width:90%;background:var(--green)"></div></div><div class="dim-score" style="color:var(--green)">4.5</div></div>
+      <div class="dim-row"><div class="dim-name">Accountability</div><div class="dim-bar"><div class="dim-fill" style="width:84%;background:var(--teal)"></div></div><div class="dim-score" style="color:var(--teal)">4.2</div></div>
+      <div class="dim-row" style="border:none"><div class="dim-name">People Dev</div><div class="dim-bar"><div class="dim-fill" style="width:44%;background:var(--amber)"></div></div><div class="dim-score" style="color:var(--amber)">2.2</div></div>
+      <div style="margin-top:20px;padding:16px;background:#FEF3C7;border-radius:10px">
+        <div style="font-weight:600;font-size:13px;color:#92400E;margin-bottom:6px">🔍 Contradiction Detected</div>
+        <div style="font-size:13px;color:#78350F;line-height:1.5">"You value building future leaders (Q10), but when given the chance to delegate (Q3), you chose speed over growth."</div>
+      </div>
+      <div style="margin-top:12px;padding:16px;background:var(--bg);border-radius:10px;border:1px solid #99F6E4">
+        <div style="font-weight:600;font-size:13px;margin-bottom:6px">🎯 This Week's Action</div>
+        <div style="font-size:13px;color:#475569;line-height:1.5">Pick ONE task you're holding onto. Hand it off today with clear expectations. Don't check in for 48 hours.</div>
+      </div>
+      <div style="margin-top:12px;padding:14px;background:#F8FAFC;border-radius:10px;text-align:center">
+        <div style="font-size:14px;color:var(--gray);font-style:italic">"You never drop the ball — but you're carrying too many. Your team is ready for more."</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
-<section class="section" id="pricing">
+<!-- METHODOLOGY — THE SCIENCE -->
+<section class="section" style="background:#fff" id="methodology">
+  <div class="ctn">
+    <div class="section-eye">The Science Behind It</div>
+    <h2 class="section-title">Built on Research. Powered by AI.</h2>
+    <p class="section-sub">Our Adaptive Situational Leadership Assessment (ASLA) framework isn't a personality quiz — it's a diagnostic engine grounded in behavioral science.</p>
+    
+    <!-- Research pillars -->
+    <div style="display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;margin:0 -10px 40px">
+      <div style="-webkit-flex:1;flex:1;min-width:200px;margin:0 10px 20px;padding:24px 20px;border-radius:14px;background:var(--bg);border:1px solid #99F6E4">
+        <div style="font-size:28px;margin-bottom:10px">🧬</div>
+        <div style="font-size:14px;font-weight:700;color:var(--teal-dk);margin-bottom:6px">Adaptive Branching</div>
+        <div style="font-size:13px;color:var(--gray);line-height:1.5">No two people get the same assessment. Each answer dynamically influences the next question, creating a unique diagnostic pathway tailored to your leadership pattern.</div>
+      </div>
+      <div style="-webkit-flex:1;flex:1;min-width:200px;margin:0 10px 20px;padding:24px 20px;border-radius:14px;background:var(--bg);border:1px solid #99F6E4">
+        <div style="font-size:28px;margin-bottom:10px">🔍</div>
+        <div style="font-size:14px;font-weight:700;color:var(--teal-dk);margin-bottom:6px">Contradiction Detection</div>
+        <div style="font-size:13px;color:var(--gray);line-height:1.5">Our AI cross-references your answers across scenarios to find gaps between what you believe about yourself and what your decisions reveal. This is where the real insights live.</div>
+      </div>
+      <div style="-webkit-flex:1;flex:1;min-width:200px;margin:0 10px 20px;padding:24px 20px;border-radius:14px;background:var(--bg);border:1px solid #99F6E4">
+        <div style="font-size:28px;margin-bottom:10px">📐</div>
+        <div style="font-size:14px;font-weight:700;color:var(--teal-dk);margin-bottom:6px">Multi-Dimensional Scoring</div>
+        <div style="font-size:13px;color:var(--gray);line-height:1.5">Each answer simultaneously affects 3-4 leadership dimensions. The composite scoring algorithm maps patterns that single-question analysis cannot detect.</div>
+      </div>
+      <div style="-webkit-flex:1;flex:1;min-width:200px;margin:0 10px 20px;padding:24px 20px;border-radius:14px;background:var(--bg);border:1px solid #99F6E4">
+        <div style="font-size:28px;margin-bottom:10px">⏱️</div>
+        <div style="font-size:14px;font-weight:700;color:var(--teal-dk);margin-bottom:6px">Response Dynamics</div>
+        <div style="font-size:13px;color:var(--gray);line-height:1.5">Beyond what you choose, we analyze how you engage — response patterns, hesitation signals, and consistency markers add depth that content-only tools miss.</div>
+      </div>
+    </div>
+
+    <!-- Research foundations -->
+    <div style="max-width:700px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:24px">
+        <div style="font-size:18px;font-family:'Instrument Serif',Georgia,serif;margin-bottom:4px">Research Foundations</div>
+        <div style="font-size:13px;color:var(--gray)">Our framework draws on established leadership science</div>
+      </div>
+      <div style="display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;margin:0 -6px">
+        <div style="margin:6px;padding:8px 16px;border-radius:8px;background:#F1F5F9;font-size:12px;color:var(--gray);font-weight:500">Situational Leadership Theory (Hersey & Blanchard)</div>
+        <div style="margin:6px;padding:8px 16px;border-radius:8px;background:#F1F5F9;font-size:12px;color:var(--gray);font-weight:500">Transformational Leadership (Bass & Avolio)</div>
+        <div style="margin:6px;padding:8px 16px;border-radius:8px;background:#F1F5F9;font-size:12px;color:var(--gray);font-weight:500">Behavioral Complexity Theory (Hooijberg & Quinn)</div>
+        <div style="margin:6px;padding:8px 16px;border-radius:8px;background:#F1F5F9;font-size:12px;color:var(--gray);font-weight:500">Self-Report Bias Mitigation (Donaldson & Grant-Vallone)</div>
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div style="margin-top:40px;padding:28px 24px;background:var(--dark);border-radius:16px;color:#fff">
+      <div style="display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-justify-content:center;justify-content:center;text-align:center">
+        <div style="-webkit-flex:1;flex:1;min-width:120px;padding:0 16px;margin-bottom:12px"><div style="font-size:32px;font-weight:700;font-family:'Instrument Serif',Georgia,serif;color:#5EEAD4">60+</div><div style="font-size:11px;color:#94A3B8;margin-top:2px">Validated Scenarios</div></div>
+        <div style="-webkit-flex:1;flex:1;min-width:120px;padding:0 16px;margin-bottom:12px"><div style="font-size:32px;font-weight:700;font-family:'Instrument Serif',Georgia,serif;color:#5EEAD4">10</div><div style="font-size:11px;color:#94A3B8;margin-top:2px">Dimensions Measured</div></div>
+        <div style="-webkit-flex:1;flex:1;min-width:120px;padding:0 16px;margin-bottom:12px"><div style="font-size:32px;font-weight:700;font-family:'Instrument Serif',Georgia,serif;color:#5EEAD4">6</div><div style="font-size:11px;color:#94A3B8;margin-top:2px">Archetypes Mapped</div></div>
+        <div style="-webkit-flex:1;flex:1;min-width:120px;padding:0 16px;margin-bottom:12px"><div style="font-size:32px;font-weight:700;font-family:'Instrument Serif',Georgia,serif;color:#5EEAD4">3</div><div style="font-size:11px;color:#94A3B8;margin-top:2px">Difficulty Levels</div></div>
+        <div style="-webkit-flex:1;flex:1;min-width:120px;padding:0 16px;margin-bottom:12px"><div style="font-size:32px;font-weight:700;font-family:'Instrument Serif',Georgia,serif;color:#5EEAD4">8</div><div style="font-size:11px;color:#94A3B8;margin-top:2px">Leadership Domains</div></div>
+      </div>
+    </div>
+
+    <!-- IP notice + whitepaper CTA -->
+    <div style="margin-top:32px;text-align:center">
+      <div style="display:inline-block;padding:16px 28px;border-radius:12px;border:1px solid var(--border);background:#fff">
+        <div style="font-size:13px;color:var(--gray);margin-bottom:8px">Our methodology is proprietary and patent-pending (Ref: LC-2026-ASL-001)</div>
+        <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20read%20the%20methodology%20whitepaper" class="btn btn-outline btn-sm" style="margin:0">Request Whitepaper</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg)" id="pricing">
   <div class="ctn">
     <div class="section-eye">Pricing</div>
-    <h2 class="section-title">Start Free. Go Deeper When Ready.</h2>
-    <p class="section-sub">Discover your archetype for free. Upgrade for the full picture.</p>
+    <h2 class="section-title">Start Free. Go Deep When Ready.</h2>
     <div class="pricing">
       <div class="price-card pop">
         <div class="price-pop">START HERE</div>
         <h3 class="price-name">Free</h3>
-        <div class="price-amt">₹0</div>
+        <div class="price-amt">Free</div>
         <div class="price-unit">Always free</div>
         <div class="price-feat">
           <div><span>✓</span> 10 situational scenarios</div>
-          <div><span>✓</span> Leadership archetype reveal</div>
-          <div><span>✓</span> Strengths + blind spot analysis</div>
+          <div><span>✓</span> Archetype reveal</div>
+          <div><span>✓</span> Strengths + blind spots</div>
           <div><span>✓</span> Contradiction detection</div>
-          <div><span>✓</span> Mirror sentence</div>
-          <div><span>✓</span> Weekly coaching on WhatsApp</div>
+          <div><span>✓</span> Weekly coaching</div>
         </div>
         <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" class="btn btn-wa" style="width:100%;-webkit-justify-content:center;justify-content:center">Start Free →</a>
       </div>
@@ -385,11 +418,10 @@ footer{background:var(--dark);color:var(--gray-lt);padding:32px 24px 16px;border
         <div class="price-unit">One-time</div>
         <div class="price-feat">
           <div><span>✓</span> Everything in Free</div>
-          <div><span>✓</span> Deep-dive PDF report (2000+ words)</div>
-          <div><span>✓</span> All 10 dimensions analyzed</div>
-          <div><span>✓</span> 30-day personalized coaching plan</div>
-          <div><span>✓</span> Industry benchmark comparison</div>
-          <div><span>✓</span> Start / Stop / Continue framework</div>
+          <div><span>✓</span> 2000-word deep analysis</div>
+          <div><span>✓</span> 30-day coaching plan</div>
+          <div><span>✓</span> Industry benchmarks</div>
+          <div><span>✓</span> PDF download</div>
         </div>
         <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20the%20Pro%20Report" class="btn btn-teal" style="width:100%;-webkit-justify-content:center;justify-content:center">Get Pro Report →</a>
       </div>
@@ -398,50 +430,45 @@ footer{background:var(--dark);color:var(--gray-lt);padding:32px 24px 16px;border
         <div class="price-amt">₹4,999</div>
         <div class="price-unit">10 assessments</div>
         <div class="price-feat">
-          <div><span>✓</span> Everything in Pro</div>
-          <div><span>✓</span> 10 manager assessments</div>
-          <div><span>✓</span> Team patterns summary</div>
-          <div><span>✓</span> Archetype distribution map</div>
-          <div><span>✓</span> Common blind spots report</div>
-          <div><span>✓</span> Leadership team dynamics</div>
+          <div><span>✓</span> 10 Pro Reports</div>
+          <div><span>✓</span> Team pattern summary</div>
+          <div><span>✓</span> Archetype distribution</div>
+          <div><span>✓</span> Common blind spots</div>
         </div>
         <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20the%20Team%20Pack" class="btn btn-outline" style="width:100%;-webkit-justify-content:center;justify-content:center">Get Team Pack →</a>
       </div>
       <div class="price-card">
         <h3 class="price-name">Enterprise</h3>
-        <div class="price-amt" style="font-size:28px">Custom</div>
+        <div class="price-amt">Custom</div>
         <div class="price-unit">50+ managers</div>
         <div class="price-feat">
           <div><span>✓</span> Everything in Team</div>
-          <div><span>✓</span> Full org-wide rollout</div>
-          <div><span>✓</span> Custom scenario design</div>
           <div><span>✓</span> Company dashboard</div>
-          <div><span>✓</span> Quarterly re-assessments</div>
-          <div><span>✓</span> Dedicated account manager</div>
+          <div><span>✓</span> Personal coaching</div>
+          <div><span>✓</span> Custom frameworks</div>
         </div>
-        <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discuss%20Enterprise" class="btn btn-outline" style="width:100%;-webkit-justify-content:center;justify-content:center">Contact Sales →</a>
+        <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discuss%20Enterprise" class="btn btn-dark" style="width:100%;-webkit-justify-content:center;justify-content:center">Talk to Sales →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta">
   <div class="ctn">
-    <h2>You Already Know Your Strengths.<br>Do You Know Your <em style="color:#A78BFA">Blind Spot?</em></h2>
-    <p>10 minutes. Zero cost. The insight that changes how you lead.</p>
+    <h2>Every Leader Has Blind Spots.<br>Most Never Find Theirs.</h2>
+    <p>10 minutes. 10 scenarios. One mirror you can't look away from.</p>
     <a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" class="btn btn-wa" style="font-size:17px;padding:16px 36px">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" style="margin-right:8px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Discover My Leadership Archetype →
     </a>
-    <p class="cta-sub">10 minutes · WhatsApp · Hindi + English · Always free</p>
+    <p style="color:var(--gray);font-size:13px;margin-top:16px">Free · 10 minutes · WhatsApp · Hindi & English</p>
   </div>
 </section>
 
 <footer>
   <div class="ctn">
-    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-      <div><div style="font-family:'Instrument Serif',Georgia,serif;font-size:20px;color:#fff">⚡ LightningCoach</div><p style="font-size:12px;margin-top:4px">AI leadership assessment for India's managers.</p></div>
+    <div class="f-inner">
+      <div><div style="font-family:'Instrument Serif',Georgia,serif;font-size:20px;color:#fff">⚡ LightningCoach</div><p style="font-size:11px;margin-top:4px">AI leadership assessment for India's managers.</p></div>
       <div style="font-size:11px">© 2026 LightningCoach · Made with ⚡ in India</div>
     </div>
   </div>
@@ -451,6 +478,8 @@ footer{background:var(--dark);color:var(--gray-lt);padding:32px 24px 16px;border
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
-<script>document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'})})});</script>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'})})});
+</script>
 </body>
 </html>
