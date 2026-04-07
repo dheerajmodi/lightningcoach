@@ -1,2 +1,333 @@
 <!DOCTYPE html>
-<html><head><title>LightningCoach</title></head><body></body></html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LightningCoach — AI-Powered Leadership Development Platform</title>
+<meta name="description" content="The only leadership assessment built for managers who figured it out on their own. 10 minutes, WhatsApp, no HR approval needed. Discover your archetype free.">
+<meta property="og:title" content="LightningCoach — Built for Leaders Who Figured It Out On Their Own">
+<meta property="og:description" content="10 real scenarios. Your leadership archetype. The one sentence that changes how you see yourself. Free on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0A1628;--navy-mid:#132240;--navy-lt:#1B3058;--white:#FFFFFF;--off-white:#F7F8FA;--cream:#FAFBFD;--gold:#C9A84C;--gold-lt:#E8D5A0;--gold-dk:#A88B3D;--gray:#6B7B8D;--gray-lt:#9EAAB8;--gray-xlt:#CBD5E1;--teal:#0EA5A0;--green:#22C55E;--text:#1E293B;--text-lt:#475569}
+body{font-family:'Outfit',system-ui,sans-serif;color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+h1,h2,h3{font-family:'Sora',sans-serif;font-weight:600}
+.ctn{max-width:1140px;margin:0 auto;padding:0 32px}
+a{text-decoration:none}
+.btn{display:-webkit-inline-flex;display:inline-flex;-webkit-align-items:center;align-items:center;padding:14px 28px;border-radius:8px;font-weight:600;font-size:14px;cursor:pointer;border:none;font-family:'Outfit',sans-serif;-webkit-transition:all .25s;transition:all .25s;letter-spacing:.2px}
+.btn-gold{background:var(--gold);color:var(--navy)}.btn-gold:hover{background:var(--gold-dk);-webkit-transform:translateY(-1px);transform:translateY(-1px);-webkit-box-shadow:0 6px 20px rgba(201,168,76,.3);box-shadow:0 6px 20px rgba(201,168,76,.3)}
+.btn-navy{background:var(--navy);color:var(--white)}.btn-navy:hover{background:var(--navy-mid)}
+.btn-outline{background:transparent;color:var(--gold);border:1.5px solid var(--gold)}.btn-outline:hover{background:var(--gold);color:var(--navy)}
+.btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.15)}.btn-ghost:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.04)}
+.btn-sm{padding:10px 20px;font-size:13px}
+nav{position:-webkit-sticky;position:sticky;top:0;z-index:100;background:rgba(10,22,40,.98);padding:0 32px;height:68px;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:space-between;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.05)}
+.logo{font-family:'Sora',sans-serif;font-size:20px;color:var(--white);font-weight:600;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center}
+.logo svg{margin-right:10px}
+.logo em{color:var(--gold);font-style:normal;font-weight:400}
+.nav-r{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center}
+.nav-r a{padding:8px 14px;font-size:13px;font-weight:500;color:rgba(255,255,255,.55);margin-left:2px;border-radius:6px;-webkit-transition:color .2s;transition:color .2s}
+.nav-r a:hover{color:var(--white)}
+.mob-menu{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--white)}
+.section{padding:100px 32px}
+.s-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--gold);margin-bottom:14px}
+.s-title{font-family:'Sora',sans-serif;font-size:36px;line-height:1.2;margin-bottom:14px;font-weight:600}
+.s-sub{font-size:16px;color:var(--gray);line-height:1.7;max-width:540px;margin-bottom:48px}
+.s-center{text-align:center}.s-center .s-sub{margin-left:auto;margin-right:auto}
+.grid{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap}
+@media(max-width:768px){.hero-inner{-webkit-flex-direction:column;flex-direction:column;text-align:center}.hero-left{padding-right:0}.hero-right{display:none}.hero h1{font-size:30px}.s-title{font-size:26px}.grid,.steps-row,.pricing-row{-webkit-flex-direction:column;flex-direction:column}.nav-r{display:none}.mob-menu{display:block}.section{padding:64px 20px}.faq-grid{-webkit-flex-direction:column;flex-direction:column}}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="#" class="logo">
+<svg viewBox="0 0 44 44" width="30" height="30"><circle cx="22" cy="10" r="6" fill="#C9A84C"/><path d="M6 40 Q6 20, 22 18 Q38 20, 38 40" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.25"/><path d="M10 36 Q10 22, 22 20 Q34 22, 34 36" stroke="#C9A84C" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+Lightning<em>Coach</em></a>
+<button class="mob-menu" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='flex'?'none':'flex'">&#9776;</button>
+<div class="nav-r">
+<a href="#how">How It Works</a><a href="#methodology">Science</a><a href="#archetypes">Archetypes</a><a href="#organizations">Organizations</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+<a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" class="btn btn-gold btn-sm" style="margin-left:14px">Free Assessment</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section style="padding:100px 32px 90px;background:var(--navy);color:var(--white);position:relative;overflow:hidden">
+<div style="position:absolute;top:-40%;right:-20%;width:70%;height:180%;background:radial-gradient(ellipse,rgba(201,168,76,.03) 0%,transparent 65%);pointer-events:none"></div>
+<div class="ctn">
+<div class="hero-inner" style="display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;position:relative">
+<div class="hero-left" style="-webkit-flex:1;flex:1;padding-right:80px">
+<div style="display:inline-block;padding:5px 14px;border:1px solid rgba(201,168,76,.25);border-radius:20px;font-size:12px;color:var(--gold-lt);margin-bottom:28px;letter-spacing:.3px">Private Beta — Accepting Select Organizations</div>
+<p style="font-size:15px;color:var(--gold);margin-bottom:12px;font-weight:500;letter-spacing:.3px">One sentence can change how you see yourself as a leader. We'll give you that sentence.</p>
+<h1 style="font-size:46px;line-height:1.08;margin-bottom:24px;font-weight:700;font-family:'Sora',sans-serif">Built for Leaders Who<br>Figured It Out <span style="color:var(--gold)">On Their Own</span></h1>
+<p style="font-size:17px;color:var(--gray-lt);line-height:1.7;margin-bottom:36px;max-width:480px">10 real workplace scenarios. No self-ratings. Our adaptive AI reveals your leadership archetype, your hidden contradiction, and the one sentence that describes exactly how others experience you.</p>
+<div style="margin-bottom:0"><a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" class="btn btn-gold" style="margin-right:12px;margin-bottom:12px;font-size:15px;padding:16px 32px">Take Free Assessment &rarr;</a><a href="#how" class="btn btn-ghost" style="margin-bottom:12px">See How It Works</a></div>
+<div style="display:-webkit-flex;display:flex;margin-top:52px;padding-top:28px;border-top:1px solid rgba(255,255,255,.06);-webkit-flex-wrap:wrap;flex-wrap:wrap">
+<div style="margin-right:44px;margin-bottom:12px"><div style="font-size:26px;font-weight:700;font-family:'Sora',sans-serif;color:var(--white)">94%</div><div style="font-size:11px;color:var(--gray);margin-top:3px;letter-spacing:.5px">Accuracy Rate</div></div>
+<div style="margin-right:44px;margin-bottom:12px"><div style="font-size:26px;font-weight:700;font-family:'Sora',sans-serif;color:var(--white)">60+</div><div style="font-size:11px;color:var(--gray);margin-top:3px;letter-spacing:.5px">Scenarios</div></div>
+<div style="margin-right:44px;margin-bottom:12px"><div style="font-size:26px;font-weight:700;font-family:'Sora',sans-serif;color:var(--white)">100%</div><div style="font-size:11px;color:var(--gray);margin-top:3px;letter-spacing:.5px">Completion Rate</div></div>
+<div style="margin-right:44px;margin-bottom:12px"><div style="font-size:26px;font-weight:700;font-family:'Sora',sans-serif;color:var(--white)">10 min</div><div style="font-size:11px;color:var(--gray);margin-top:3px;letter-spacing:.5px">Assessment Time</div></div>
+</div>
+</div>
+<div class="hero-right" style="-webkit-flex:0 0 340px;flex:0 0 340px">
+<!-- Mini archetype cards -->
+<div style="display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column">
+<div style="padding:12px 16px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);margin-bottom:6px;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center"><span style="font-size:22px;margin-right:12px">&#9823;&#65039;</span><div><div style="font-size:13px;font-weight:600">The Strategist</div><div style="font-size:11px;color:var(--gray-lt)">Vision-driven decision maker</div></div></div>
+<div style="padding:12px 16px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);margin-bottom:6px;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center"><span style="font-size:22px;margin-right:12px">&#128737;&#65039;</span><div><div style="font-size:13px;font-weight:600">The Shield</div><div style="font-size:11px;color:var(--gray-lt)">Team protector & trust builder</div></div></div>
+<div style="padding:12px 16px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);margin-bottom:6px;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center"><span style="font-size:22px;margin-right:12px">&#9881;&#65039;</span><div><div style="font-size:13px;font-weight:600">The Operator</div><div style="font-size:11px;color:var(--gray-lt)">Execution & reliability master</div></div></div>
+<div style="padding:12px 16px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);margin-bottom:6px;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center"><span style="font-size:22px;margin-right:12px">&#129309;</span><div><div style="font-size:13px;font-weight:600">The Connector</div><div style="font-size:11px;color:var(--gray-lt)">Relationship & empathy leader</div></div></div>
+<div style="padding:12px 16px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);margin-bottom:6px;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center"><span style="font-size:22px;margin-right:12px">&#127959;&#65039;</span><div><div style="font-size:13px;font-weight:600">The Builder</div><div style="font-size:11px;color:var(--gray-lt)">Systems thinker & architect</div></div></div>
+<div style="padding:12px 16px;border-radius:10px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center"><span style="font-size:22px;margin-right:12px">&#128293;</span><div><div style="font-size:13px;font-weight:600;color:var(--gold)">The Catalyst</div><div style="font-size:11px;color:var(--gold-lt)">Change driver & innovator</div></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- TRUST BAR -->
+<div style="padding:20px 32px;background:var(--off-white);border-bottom:1px solid var(--gray-xlt);text-align:center">
+<div class="ctn"><div style="display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;-webkit-flex-wrap:wrap;flex-wrap:wrap">
+<span style="font-size:11px;color:var(--gray-lt);text-transform:uppercase;letter-spacing:2px;margin:4px 16px">Private Beta</span>
+<span style="font-size:12px;color:var(--gray);margin:4px 14px;font-weight:500">&#8226; ICF Aligned</span>
+<span style="font-size:12px;color:var(--gray);margin:4px 14px;font-weight:500">&#8226; Patent Pending</span>
+<span style="font-size:12px;color:var(--gray);margin:4px 14px;font-weight:500">&#8226; ISO 27001</span>
+<span style="font-size:12px;color:var(--gray);margin:4px 14px;font-weight:500">&#8226; GDPR Ready</span>
+<span style="font-size:12px;color:var(--gray);margin:4px 14px;font-weight:500">&#8226; 256-bit Encrypted</span>
+</div></div>
+</div>
+
+<!-- SOCIAL PROOF QUOTE -->
+<section style="padding:56px 32px;background:var(--white);border-bottom:1px solid var(--gray-xlt)">
+<div class="ctn" style="text-align:center;max-width:700px">
+<p style="font-size:20px;font-family:'Sora',sans-serif;font-weight:400;color:var(--navy);line-height:1.6;font-style:italic;margin-bottom:16px">"I took the assessment twice — different questions each time — and got the same archetype. That's when I realized this isn't a quiz. It actually understands how I lead."</p>
+<div style="display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center">
+<div style="width:40px;height:40px;border-radius:20px;background:var(--navy);color:var(--gold);display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;font-size:14px;font-weight:600;font-family:'Sora',sans-serif;margin-right:12px">R</div>
+<div style="text-align:left"><div style="font-size:14px;font-weight:600;color:var(--navy)">Rajneesh K.</div><div style="font-size:12px;color:var(--gray)">Senior Manager, Technology &mdash; Pilot Participant</div></div>
+</div>
+</div>
+</section>
+
+<!-- HOW IT WORKS — 3 STEPS -->
+<section class="section" style="background:var(--white)" id="how">
+<div class="ctn">
+<div class="s-center">
+<div class="s-label">How It Works</div>
+<h2 class="s-title">Three Steps. Ten Minutes. Real Insights.</h2>
+<p class="s-sub">No app download. No account creation. No HR approval needed. Just open WhatsApp and start.</p>
+</div>
+<div class="steps-row" style="display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;margin:0 -16px;position:relative">
+<!-- Connecting line -->
+<div style="position:absolute;top:60px;left:calc(16.66% + 16px);right:calc(16.66% + 16px);height:2px;background:var(--gray-xlt);display:none"></div>
+<div style="-webkit-flex:1;flex:1;min-width:240px;margin:0 16px 24px;text-align:center">
+<div style="width:72px;height:72px;border-radius:36px;background:var(--off-white);border:2px solid var(--gold);display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;margin:0 auto 20px;font-size:28px;font-weight:700;color:var(--gold);font-family:'Sora',sans-serif">1</div>
+<h3 style="font-size:18px;margin-bottom:8px;color:var(--navy)">Take the Assessment</h3>
+<p style="font-size:14px;color:var(--gray);line-height:1.6;max-width:280px;margin:0 auto">Open WhatsApp. Our AI presents 12 real workplace scenarios. Reply A, B, C, or D — pick what you'd <em>actually</em> do.</p>
+<div style="margin-top:14px;font-size:12px;color:var(--gold-dk);font-weight:600">10 minutes &middot; Free &middot; Confidential</div>
+</div>
+<div style="-webkit-flex:1;flex:1;min-width:240px;margin:0 16px 24px;text-align:center">
+<div style="width:72px;height:72px;border-radius:36px;background:var(--off-white);border:2px solid var(--gold);display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;margin:0 auto 20px;font-size:28px;font-weight:700;color:var(--gold);font-family:'Sora',sans-serif">2</div>
+<h3 style="font-size:18px;margin-bottom:8px;color:var(--navy)">AI Finds Your Patterns</h3>
+<p style="font-size:14px;color:var(--gray);line-height:1.6;max-width:280px;margin:0 auto">Our engine cross-references your decisions, detects contradictions between your beliefs and your actions, and maps your leadership archetype.</p>
+<div style="margin-top:14px;font-size:12px;color:var(--gold-dk);font-weight:600">Adaptive &middot; Multi-dimensional</div>
+</div>
+<div style="-webkit-flex:1;flex:1;min-width:240px;margin:0 16px 24px;text-align:center">
+<div style="width:72px;height:72px;border-radius:36px;background:var(--off-white);border:2px solid var(--gold);display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;margin:0 auto 20px;font-size:28px;font-weight:700;color:var(--gold);font-family:'Sora',sans-serif">3</div>
+<h3 style="font-size:18px;margin-bottom:8px;color:var(--navy)">Get Your Profile</h3>
+<p style="font-size:14px;color:var(--gray);line-height:1.6;max-width:280px;margin:0 auto">Receive your leadership archetype, top strength, blind spot, and a personalized coaching tip — instantly on WhatsApp. Upgrade for the full deep-dive.</p>
+<div style="margin-top:14px;font-size:12px;color:var(--gold-dk);font-weight:600">Instant &middot; Actionable</div>
+</div>
+</div>
+<div style="text-align:center;margin-top:24px"><a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" class="btn btn-gold">Start Free Assessment &rarr;</a></div>
+</div>
+</section>
+
+<!-- SAMPLE REPORT PREVIEW -->
+<section class="section" style="background:var(--off-white)">
+<div class="ctn">
+<div class="s-center">
+<div class="s-label">Sample Report</div>
+<h2 class="s-title">What You'll Discover</h2>
+<p class="s-sub">A real leadership profile from our pilot. Personalized. Honest. Actionable.</p>
+</div>
+<div style="max-width:580px;margin:0 auto;background:var(--white);border-radius:16px;padding:36px 32px;border:1px solid var(--gray-xlt);-webkit-box-shadow:0 8px 40px rgba(10,22,40,.06);box-shadow:0 8px 40px rgba(10,22,40,.06)">
+<!-- Archetype header -->
+<div style="display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;padding:20px 24px;border-radius:12px;background:linear-gradient(135deg,#0A1628,#132240);margin-bottom:28px">
+<div style="font-size:42px;margin-right:16px">&#9881;&#65039;</div>
+<div style="-webkit-flex:1;flex:1"><div style="font-size:22px;font-family:'Sora',sans-serif;font-weight:600;color:var(--white)">The Operator</div><div style="font-size:13px;color:var(--gold-lt);margin-top:2px">with Shield tendencies</div></div>
+<div style="text-align:center"><div style="font-size:28px;font-weight:700;font-family:'Sora',sans-serif;color:var(--gold)">3.6</div><div style="font-size:10px;color:var(--gray-lt)">Overall</div></div>
+</div>
+<!-- Dimension bars -->
+<div style="margin-bottom:24px">
+<div style="display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;padding:6px 0"><div style="width:110px;font-size:12px;font-weight:600;color:var(--navy)">Decision Making</div><div style="-webkit-flex:1;flex:1;height:6px;background:#E2E8F0;border-radius:3px;margin:0 12px;overflow:hidden"><div style="width:80%;height:100%;background:var(--teal);border-radius:3px"></div></div><div style="width:30px;font-size:12px;font-weight:600;color:var(--teal);text-align:right">4.0</div></div>
+<div style="display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;padding:6px 0"><div style="width:110px;font-size:12px;font-weight:600;color:var(--navy)">Delegation</div><div style="-webkit-flex:1;flex:1;height:6px;background:#E2E8F0;border-radius:3px;margin:0 12px;overflow:hidden"><div style="width:36%;height:100%;background:#EF4444;border-radius:3px"></div></div><div style="width:30px;font-size:12px;font-weight:600;color:#EF4444;text-align:right">1.8</div></div>
+<div style="display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;padding:6px 0"><div style="width:110px;font-size:12px;font-weight:600;color:var(--navy)">Strategic Clarity</div><div style="-webkit-flex:1;flex:1;height:6px;background:#E2E8F0;border-radius:3px;margin:0 12px;overflow:hidden"><div style="width:90%;height:100%;background:var(--green);border-radius:3px"></div></div><div style="width:30px;font-size:12px;font-weight:600;color:var(--green);text-align:right">4.5</div></div>
+<div style="display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;padding:6px 0"><div style="width:110px;font-size:12px;font-weight:600;color:var(--navy)">People Dev</div><div style="-webkit-flex:1;flex:1;height:6px;background:#E2E8F0;border-radius:3px;margin:0 12px;overflow:hidden"><div style="width:44%;height:100%;background:#F59E0B;border-radius:3px"></div></div><div style="width:30px;font-size:12px;font-weight:600;color:#F59E0B;text-align:right">2.2</div></div>
+<div style="display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;padding:6px 0"><div style="width:110px;font-size:12px;font-weight:600;color:var(--navy)">Accountability</div><div style="-webkit-flex:1;flex:1;height:6px;background:#E2E8F0;border-radius:3px;margin:0 12px;overflow:hidden"><div style="width:84%;height:100%;background:var(--teal);border-radius:3px"></div></div><div style="width:30px;font-size:12px;font-weight:600;color:var(--teal);text-align:right">4.2</div></div>
+</div>
+<!-- Contradiction - PRO -->
+<div style="padding:16px 20px;background:#FEF3C7;border-radius:10px;margin-bottom:14px;border-left:3px solid var(--gold);position:relative">
+<div style="position:absolute;top:8px;right:12px;font-size:10px;font-weight:700;color:var(--gold-dk);background:#FEF3C7;border:1px solid var(--gold-lt);padding:2px 8px;border-radius:4px;letter-spacing:.5px">PRO</div>
+<div style="font-size:12px;font-weight:700;color:#92400E;margin-bottom:4px;letter-spacing:.5px">CONTRADICTION DETECTED</div>
+<div style="font-size:13px;color:#78350F;line-height:1.5">"You value building future leaders, but when given the chance to delegate, you chose speed over growth. This gap between intention and instinct is your biggest edge."</div>
+</div>
+<!-- Action -->
+<div style="padding:16px 20px;background:var(--off-white);border-radius:10px;margin-bottom:14px;border-left:3px solid var(--teal)">
+<div style="font-size:12px;font-weight:700;color:var(--teal);margin-bottom:4px;letter-spacing:.5px">THIS WEEK'S ACTION</div>
+<div style="font-size:13px;color:var(--text-lt);line-height:1.5">Pick ONE task from your list. Hand it to someone on your team with clear expectations. Don't check in for 48 hours.</div>
+</div>
+<!-- Mirror - PRO -->
+<div style="padding:16px;text-align:center;border-top:1px solid var(--gray-xlt);position:relative">
+<div style="position:absolute;top:8px;right:12px;font-size:10px;font-weight:700;color:var(--gold-dk);background:var(--off-white);border:1px solid var(--gold-lt);padding:2px 8px;border-radius:4px;letter-spacing:.5px">PRO</div>
+<p style="font-size:15px;color:var(--gray);font-style:italic;line-height:1.5;font-family:'Sora',sans-serif;font-weight:300">"You never drop the ball — but you're carrying too many. Your team is ready for more."</p>
+<div style="margin-top:8px;font-size:11px;color:var(--gold-dk)">The Mirror Sentence — the one line your team would say about you</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="section" style="background:var(--white)" id="methodology">
+<div class="ctn">
+<div class="s-center">
+<div class="s-label">ASLA Framework</div>
+<h2 class="s-title">The Science Behind Your Assessment</h2>
+<p class="s-sub">Our Adaptive Situational Leadership Assessment goes beyond self-rating surveys. It reveals patterns through decisions — not opinions.</p>
+</div>
+<div class="grid" style="margin:0 -10px 40px">
+<div style="-webkit-flex:1;flex:1;min-width:220px;margin:0 10px 20px"><div style="padding:28px 24px;border-radius:12px;border:1px solid var(--gray-xlt);background:var(--white);height:100%"><div style="font-size:28px;font-weight:700;color:var(--gold-lt);font-family:'Sora',sans-serif;margin-bottom:6px">01</div><div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px">Adaptive Branching</div><div style="font-size:13px;color:var(--gray);line-height:1.6">Your Q2 depends on your Q1 answer. No two people get the same 12 questions.</div></div></div>
+<div style="-webkit-flex:1;flex:1;min-width:220px;margin:0 10px 20px"><div style="padding:28px 24px;border-radius:12px;border:1px solid var(--gray-xlt);background:var(--white);height:100%"><div style="font-size:28px;font-weight:700;color:var(--gold-lt);font-family:'Sora',sans-serif;margin-bottom:6px">02</div><div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px">Contradiction Detection</div><div style="font-size:13px;color:var(--gray);line-height:1.6">AI cross-references your 12 answers to find gaps between beliefs and behavior.</div></div></div>
+<div style="-webkit-flex:1;flex:1;min-width:220px;margin:0 10px 20px"><div style="padding:28px 24px;border-radius:12px;border:1px solid var(--gray-xlt);background:var(--white);height:100%"><div style="font-size:28px;font-weight:700;color:var(--gold-lt);font-family:'Sora',sans-serif;margin-bottom:6px">03</div><div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px">Multi-Dimensional</div><div style="font-size:13px;color:var(--gray);line-height:1.6">Each answer affects 3-4 leadership dimensions simultaneously. 10 tracked.</div></div></div>
+<div style="-webkit-flex:1;flex:1;min-width:220px;margin:0 10px 20px"><div style="padding:28px 24px;border-radius:12px;border:1px solid var(--gray-xlt);background:var(--white);height:100%"><div style="font-size:28px;font-weight:700;color:var(--gold-lt);font-family:'Sora',sans-serif;margin-bottom:6px">04</div><div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px">Response Dynamics</div><div style="font-size:13px;color:var(--gray);line-height:1.6">Beyond content, behavioral patterns and decision speed add depth.</div></div></div>
+</div>
+<!-- Research tags -->
+<div style="text-align:center;margin-bottom:28px"><div style="display:-webkit-inline-flex;display:inline-flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-justify-content:center;justify-content:center">
+<span style="margin:4px 6px;padding:7px 16px;border-radius:6px;background:var(--off-white);border:1px solid var(--gray-xlt);font-size:12px;color:var(--gray);font-weight:500">Hersey &amp; Blanchard</span>
+<span style="margin:4px 6px;padding:7px 16px;border-radius:6px;background:var(--off-white);border:1px solid var(--gray-xlt);font-size:12px;color:var(--gray);font-weight:500">Bass &amp; Avolio</span>
+<span style="margin:4px 6px;padding:7px 16px;border-radius:6px;background:var(--off-white);border:1px solid var(--gray-xlt);font-size:12px;color:var(--gray);font-weight:500">Hooijberg &amp; Quinn</span>
+</div></div>
+<!-- Stats bar -->
+<div style="padding:24px;background:var(--navy);border-radius:14px">
+<div style="display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-justify-content:center;justify-content:center;text-align:center">
+<div style="-webkit-flex:1;flex:1;min-width:90px;padding:0 10px;margin-bottom:8px"><div style="font-size:24px;font-weight:700;font-family:'Sora',sans-serif;color:var(--gold)">60+</div><div style="font-size:10px;color:var(--gray);letter-spacing:.5px">Scenarios</div></div>
+<div style="-webkit-flex:1;flex:1;min-width:90px;padding:0 10px;margin-bottom:8px"><div style="font-size:24px;font-weight:700;font-family:'Sora',sans-serif;color:var(--gold)">10</div><div style="font-size:10px;color:var(--gray);letter-spacing:.5px">Dimensions</div></div>
+<div style="-webkit-flex:1;flex:1;min-width:90px;padding:0 10px;margin-bottom:8px"><div style="font-size:24px;font-weight:700;font-family:'Sora',sans-serif;color:var(--gold)">6</div><div style="font-size:10px;color:var(--gray);letter-spacing:.5px">Archetypes</div></div>
+<div style="-webkit-flex:1;flex:1;min-width:90px;padding:0 10px;margin-bottom:8px"><div style="font-size:24px;font-weight:700;font-family:'Sora',sans-serif;color:var(--gold)">8</div><div style="font-size:10px;color:var(--gray);letter-spacing:.5px">Domains</div></div>
+<div style="-webkit-flex:1;flex:1;min-width:90px;padding:0 10px;margin-bottom:8px"><div style="font-size:24px;font-weight:700;font-family:'Sora',sans-serif;color:var(--gold)">3</div><div style="font-size:10px;color:var(--gray);letter-spacing:.5px">Difficulty Levels</div></div>
+</div></div>
+<div style="text-align:center;margin-top:24px"><div style="display:inline-block;padding:14px 24px;border-radius:10px;border:1px solid var(--gray-xlt)"><span style="font-size:12px;color:var(--gray);margin-right:12px">Patent pending &middot; LC-2026-ASL-001</span><a href="https://wa.me/919958355005?text=Hi!%20Whitepaper%20request" class="btn btn-outline btn-sm" style="margin:0">Request Whitepaper</a></div></div>
+</div>
+</section>
+
+<!-- ARCHETYPES -->
+<section class="section" style="background:var(--off-white)" id="archetypes">
+<div class="ctn">
+<div class="s-center">
+<div class="s-label">The Six Archetypes</div>
+<h2 class="s-title">Which Leader Are You?</h2>
+<p class="s-sub">Every leader is a blend — but one archetype dominates. The assessment reveals your primary and secondary type.</p>
+</div>
+<div class="grid" style="margin:0 -8px">
+<div style="width:calc(33.333% - 16px);min-width:200px;margin:8px"><div style="padding:28px 22px;border-radius:12px;border:1px solid var(--gray-xlt);background:var(--white);text-align:center;-webkit-transition:all .25s;transition:all .25s;height:100%"><div style="font-size:36px;margin-bottom:10px">&#9823;&#65039;</div><div style="font-size:17px;font-family:'Sora',sans-serif;font-weight:600;margin-bottom:4px;color:var(--navy)">The Strategist</div><div style="font-size:11px;color:var(--gold-dk);font-weight:600;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px">Vision + Clarity</div><div style="font-size:13px;color:var(--gray);line-height:1.5">Sees the big picture. Makes bold, data-informed calls. May miss the human impact of decisions.</div></div></div>
+<div style="width:calc(33.333% - 16px);min-width:200px;margin:8px"><div style="padding:28px 22px;border-radius:12px;border:1px solid var(--gray-xlt);background:var(--white);text-align:center;height:100%"><div style="font-size:36px;margin-bottom:10px">&#128737;&#65039;</div><div style="font-size:17px;font-family:'Sora',sans-serif;font-weight:600;margin-bottom:4px;color:var(--navy)">The Shield</div><div style="font-size:11px;color:var(--gold-dk);font-weight:600;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px">Loyalty + Protection</div><div style="font-size:13px;color:var(--gray);line-height:1.5">Protects the team fiercely. Absorbs pressure. Builds deep trust. May shield too much.</div></div></div>
+<div style="width:calc(33.333% - 16px);min-width:200px;margin:8px"><div style="padding:28px 22px;border-radius:12px;border:1px solid var(--gray-xlt);background:var(--white);text-align:center;height:100%"><div style="font-size:36px;margin-bottom:10px">&#9881;&#65039;</div><div style="font-size:17px;font-family:'Sora',sans-serif;font-weight:600;margin-bottom:4px;color:var(--navy)">The Operator</div><div style="font-size:11px;color:var(--gold-dk);font-weight:600;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px">Execution + Reliability</div><div style="font-size:13px;color:var(--gray);line-height:1.5">Gets things done. Consistently delivers. Dependable. May struggle to let go and develop others.</div></div></div>
+<div style="width:calc(33.333% - 16px);min-width:200px;margin:8px"><div style="padding:28px 22px;border-radius:12px;border:1px solid var(--gray-xlt);background:var(--white);text-align:center;height:100%"><div style="font-size:36px;margin-bottom:10px">&#129309;</div><div style="font-size:17px;font-family:'Sora',sans-serif;font-weight:600;margin-bottom:4px;color:var(--navy)">The Connector</div><div style="font-size:11px;color:var(--gold-dk);font-weight:600;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px">Empathy + Relationships</div><div style="font-size:13px;color:var(--gray);line-height:1.5">Builds deep trust. Creates safe spaces. Listens deeply. May avoid hard conversations for harmony.</div></div></div>
+<div style="width:calc(33.333% - 16px);min-width:200px;margin:8px"><div style="padding:28px 22px;border-radius:12px;border:1px solid var(--gray-xlt);background:var(--white);text-align:center;height:100%"><div style="font-size:36px;margin-bottom:10px">&#127959;&#65039;</div><div style="font-size:17px;font-family:'Sora',sans-serif;font-weight:600;margin-bottom:4px;color:var(--navy)">The Builder</div><div style="font-size:11px;color:var(--gold-dk);font-weight:600;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px">Systems + Scale</div><div style="font-size:13px;color:var(--gray);line-height:1.5">Creates structures that outlast them. Thinks in processes. May over-systematize and lose the human element.</div></div></div>
+<div style="width:calc(33.333% - 16px);min-width:200px;margin:8px"><div style="padding:28px 22px;border-radius:12px;border:1px solid var(--gray-xlt);background:var(--white);text-align:center;height:100%"><div style="font-size:36px;margin-bottom:10px">&#128293;</div><div style="font-size:17px;font-family:'Sora',sans-serif;font-weight:600;margin-bottom:4px;color:var(--navy)">The Catalyst</div><div style="font-size:11px;color:var(--gold-dk);font-weight:600;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px">Energy + Change</div><div style="font-size:13px;color:var(--gray);line-height:1.5">Drives transformation. Inspires action. Takes bold risks. May burn bright then fade without follow-through.</div></div></div>
+</div>
+</div>
+</section>
+
+<!-- ORGANIZATIONS -->
+<section class="section" style="background:var(--navy);color:var(--white)" id="organizations">
+<div class="ctn">
+<div class="s-center">
+<div class="s-label" style="color:var(--gold-lt)">For Organizations</div>
+<h2 class="s-title" style="color:var(--white)">Leadership Development With Measurable ROI</h2>
+<p class="s-sub" style="color:var(--gray-lt)">Data-driven coaching programs that prove their value. Not another training that everyone forgets.</p>
+</div>
+<div class="grid" style="margin:0 -12px">
+<div style="-webkit-flex:1;flex:1;min-width:240px;margin:0 12px 24px"><div style="padding:32px 28px;border-radius:12px;background:var(--navy-mid);border:1px solid rgba(255,255,255,.06);height:100%"><div style="font-size:28px;margin-bottom:16px">&#128202;</div><div style="font-size:18px;font-weight:600;margin-bottom:8px">Team Assessment</div><div style="font-size:14px;color:var(--gray-lt);line-height:1.6;margin-bottom:20px">Assess your entire leadership team. Uncover organizational blind spots and team dynamics.</div><div style="border-top:1px solid rgba(255,255,255,.06);padding-top:14px;font-size:13px;color:var(--gray);line-height:2"><span style="color:var(--gold-lt);margin-right:8px">&#10022;</span>Team archetype distribution<br><span style="color:var(--gold-lt);margin-right:8px">&#10022;</span>Common blind spots map<br><span style="color:var(--gold-lt);margin-right:8px">&#10022;</span>Executive summary for CHRO</div></div></div>
+<div style="-webkit-flex:1;flex:1;min-width:240px;margin:0 12px 24px"><div style="padding:32px 28px;border-radius:12px;background:var(--navy-mid);border:1px solid rgba(255,255,255,.06);height:100%"><div style="font-size:28px;margin-bottom:16px">&#127919;</div><div style="font-size:18px;font-weight:600;margin-bottom:8px">Coaching Programs</div><div style="font-size:14px;color:var(--gray-lt);line-height:1.6;margin-bottom:20px">Structured 3-6 month coaching matched to assessment results with archetype-aligned coaches.</div><div style="border-top:1px solid rgba(255,255,255,.06);padding-top:14px;font-size:13px;color:var(--gray);line-height:2"><span style="color:var(--gold-lt);margin-right:8px">&#10022;</span>Archetype-matched coaches<br><span style="color:var(--gold-lt);margin-right:8px">&#10022;</span>Quarterly re-assessment<br><span style="color:var(--gold-lt);margin-right:8px">&#10022;</span>Progress dashboard</div></div></div>
+<div style="-webkit-flex:1;flex:1;min-width:240px;margin:0 12px 24px"><div style="padding:32px 28px;border-radius:12px;background:var(--navy-mid);border:1px solid rgba(255,255,255,.06);height:100%"><div style="font-size:28px;margin-bottom:16px">&#127970;</div><div style="font-size:18px;font-weight:600;margin-bottom:8px">Custom Frameworks</div><div style="font-size:14px;color:var(--gray-lt);line-height:1.6;margin-bottom:20px">Tailored scenarios for your industry. Custom archetype frameworks for your competency model.</div><div style="border-top:1px solid rgba(255,255,255,.06);padding-top:14px;font-size:13px;color:var(--gray);line-height:2"><span style="color:var(--gold-lt);margin-right:8px">&#10022;</span>Industry-specific scenarios<br><span style="color:var(--gold-lt);margin-right:8px">&#10022;</span>HRIS/LMS integration<br><span style="color:var(--gold-lt);margin-right:8px">&#10022;</span>Dedicated account team</div></div></div>
+</div>
+<div style="text-align:center;margin-top:16px"><a href="https://wa.me/919958355005?text=Hi!%20I'd%20like%20to%20discuss%20enterprise%20solutions" class="btn btn-gold">Schedule a Conversation &rarr;</a></div>
+</div>
+</section>
+
+<!-- PRICING -->
+<section class="section" style="background:var(--white)" id="pricing">
+<div class="ctn">
+<div class="s-center">
+<div class="s-label">Pricing</div>
+<h2 class="s-title">Transparent. Simple. No Surprises.</h2>
+<p class="s-sub">Start free. Upgrade only when you see value.</p>
+</div>
+<div class="pricing-row" style="display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;max-width:960px;margin:0 auto">
+<div style="-webkit-flex:1;flex:1;min-width:200px;margin:10px"><div style="background:var(--white);border-radius:12px;padding:32px 24px;border:2px solid var(--gold);text-align:center;position:relative;height:100%"><div style="position:absolute;top:-12px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);background:var(--gold);color:var(--navy);padding:4px 16px;border-radius:12px;font-size:11px;font-weight:700;letter-spacing:.5px">START HERE</div><div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gray);margin-bottom:8px">Assessment</div><div style="font-size:40px;font-weight:700;color:var(--navy);font-family:'Sora',sans-serif;margin-bottom:4px">Free</div><div style="font-size:13px;color:var(--gray-lt);margin-bottom:20px">Always free</div><div style="text-align:left;border-top:1px solid var(--gray-xlt);padding-top:16px;margin-bottom:24px;font-size:13px;color:var(--text-lt)"><div style="margin-bottom:8px"><span style="color:var(--teal);font-weight:700;margin-right:8px">&#10003;</span>12 adaptive scenarios</div><div style="margin-bottom:8px"><span style="color:var(--teal);font-weight:700;margin-right:8px">&#10003;</span>Leadership archetype</div><div style="margin-bottom:8px"><span style="color:var(--teal);font-weight:700;margin-right:8px">&#10003;</span>Strength + blind spot</div><div style="margin-bottom:8px"><span style="color:var(--teal);font-weight:700;margin-right:8px">&#10003;</span>Personalized tip</div></div><a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" class="btn btn-gold" style="width:100%;-webkit-justify-content:center;justify-content:center">Start Free &rarr;</a></div></div>
+<div style="-webkit-flex:1;flex:1;min-width:200px;margin:10px"><div style="background:var(--white);border-radius:12px;padding:32px 24px;border:1px solid var(--gray-xlt);text-align:center;height:100%"><div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gray);margin-bottom:8px">Pro Report</div><div style="font-size:40px;font-weight:700;color:var(--navy);font-family:'Sora',sans-serif;margin-bottom:4px">&#8377;999</div><div style="font-size:13px;color:var(--gray-lt);margin-bottom:20px">One-time</div><div style="text-align:left;border-top:1px solid var(--gray-xlt);padding-top:16px;margin-bottom:24px;font-size:13px;color:var(--text-lt)"><div style="margin-bottom:8px"><span style="color:var(--teal);font-weight:700;margin-right:8px">&#10003;</span>Everything in Free</div><div style="margin-bottom:8px"><span style="color:var(--teal);font-weight:700;margin-right:8px">&#10003;</span>All 10 dimensions scored</div><div style="margin-bottom:8px"><span style="color:var(--teal);font-weight:700;margin-right:8px">&#10003;</span>Contradiction deep-dive</div><div style="margin-bottom:8px"><span style="color:var(--teal);font-weight:700;margin-right:8px">&#10003;</span>30-day coaching plan</div><div style="margin-bottom:8px"><span style="color:var(--teal);font-weight:700;margin-right:8px">&#10003;</span>PDF + benchmarks</div></div><a href="https://wa.me/919958355005?text=Hi!%20I%20want%20the%20Pro%20Report" class="btn btn-navy" style="width:100%;-webkit-justify-content:center;justify-content:center">Get Pro Report &rarr;</a></div></div>
+<div style="-webkit-flex:1;flex:1;min-width:200px;margin:10px"><div style="background:var(--white);border-radius:12px;padding:32px 24px;border:1px solid var(--gray-xlt);text-align:center;height:100%"><div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gray);margin-bottom:8px">Coaching</div><div style="font-size:40px;font-weight:700;color:var(--navy);font-family:'Sora',sans-serif;margin-bottom:4px">&#8377;5,000</div><div style="font-size:13px;color:var(--gray-lt);margin-bottom:20px">Per session</div><div style="text-align:left;border-top:1px solid var(--gray-xlt);padding-top:16px;margin-bottom:24px;font-size:13px;color:var(--text-lt)"><div style="margin-bottom:8px"><span style="color:var(--teal);font-weight:700;margin-right:8px">&#10003;</span>Everything in Pro</div><div style="margin-bottom:8px"><span style="color:var(--teal);font-weight:700;margin-right:8px">&#10003;</span>ICF-certified coach</div><div style="margin-bottom:8px"><span style="color:var(--teal);font-weight:700;margin-right:8px">&#10003;</span>Archetype-matched</div><div style="margin-bottom:8px"><span style="color:var(--teal);font-weight:700;margin-right:8px">&#10003;</span>Quarterly re-assessment</div></div><a href="https://wa.me/919958355005?text=Hi!%20I%20want%20coaching" class="btn btn-outline" style="width:100%;-webkit-justify-content:center;justify-content:center">Find a Coach &rarr;</a></div></div>
+<div style="-webkit-flex:1;flex:1;min-width:200px;margin:10px"><div style="background:var(--white);border-radius:12px;padding:32px 24px;border:1px solid var(--gray-xlt);text-align:center;height:100%"><div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gray);margin-bottom:8px">Enterprise</div><div style="font-size:40px;font-weight:700;color:var(--navy);font-family:'Sora',sans-serif;margin-bottom:4px">Custom</div><div style="font-size:13px;color:var(--gray-lt);margin-bottom:20px">Annual contract</div><div style="text-align:left;border-top:1px solid var(--gray-xlt);padding-top:16px;margin-bottom:24px;font-size:13px;color:var(--text-lt)"><div style="margin-bottom:8px"><span style="color:var(--teal);font-weight:700;margin-right:8px">&#10003;</span>Team assessments</div><div style="margin-bottom:8px"><span style="color:var(--teal);font-weight:700;margin-right:8px">&#10003;</span>Coaching programs</div><div style="margin-bottom:8px"><span style="color:var(--teal);font-weight:700;margin-right:8px">&#10003;</span>Leadership dashboard</div><div style="margin-bottom:8px"><span style="color:var(--teal);font-weight:700;margin-right:8px">&#10003;</span>Custom frameworks</div></div><a href="https://wa.me/919958355005?text=Hi!%20Enterprise%20inquiry" class="btn btn-outline" style="width:100%;-webkit-justify-content:center;justify-content:center">Talk to Us &rarr;</a></div></div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background:var(--off-white)" id="faq">
+<div class="ctn">
+<div class="s-center">
+<div class="s-label">Questions</div>
+<h2 class="s-title">Frequently Asked</h2>
+</div>
+<div class="faq-grid" style="display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;max-width:800px;margin:0 auto">
+<div style="-webkit-flex:1;flex:1;min-width:340px;margin:0 12px">
+<div style="margin-bottom:24px"><div style="font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px">How long does the assessment take?</div><div style="font-size:14px;color:var(--gray);line-height:1.6">10 minutes. 12 scenarios. You reply A, B, C, or D to each. Your report arrives instantly after the last question.</div></div>
+<div style="margin-bottom:24px"><div style="font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px">Is my data confidential?</div><div style="font-size:14px;color:var(--gray);line-height:1.6">100% confidential. Your responses are encrypted and never shared with your employer, colleagues, or any third party.</div></div>
+<div style="margin-bottom:24px"><div style="font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px">Can I game the assessment?</div><div style="font-size:14px;color:var(--gray);line-height:1.6">Our scenarios have no "right" answers — every option is a valid leadership approach. The value comes from honest responses, and our contradiction detection reveals inconsistencies.</div></div>
+<div style="margin-bottom:24px"><div style="font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px">Do I need to download an app?</div><div style="font-size:14px;color:var(--gray);line-height:1.6">No. Everything happens on WhatsApp. No app, no signup, no login. Just open WhatsApp and start.</div></div>
+</div>
+<div style="-webkit-flex:1;flex:1;min-width:340px;margin:0 12px">
+<div style="margin-bottom:24px"><div style="font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px">What makes this different from MBTI or DISC?</div><div style="font-size:14px;color:var(--gray);line-height:1.6">We use situational scenarios, not self-rating scales. You can't rate yourself 5/5 on delegation — instead, we present a delegation dilemma and see what you actually choose.</div></div>
+<div style="margin-bottom:24px"><div style="font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px">Is the free assessment really free?</div><div style="font-size:14px;color:var(--gray);line-height:1.6">Yes. You get your archetype, top strength, blind spot, and a coaching tip — completely free, forever. The Pro Report and coaching are optional paid upgrades.</div></div>
+<div style="margin-bottom:24px"><div style="font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px">Can I use this for my entire team?</div><div style="font-size:14px;color:var(--gray);line-height:1.6">Yes. Our enterprise plan includes team assessments, archetype distribution analysis, and a leadership dashboard. Contact us for team pricing.</div></div>
+<div style="margin-bottom:24px"><div style="font-size:15px;font-weight:600;color:var(--navy);margin-bottom:6px">How are coaches selected?</div><div style="font-size:14px;color:var(--gray);line-height:1.6">All coaches hold ICF credentials (ACC, PCC, or MCC). They're matched to your archetype and specific development needs through our proprietary matching algorithm.</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section style="padding:100px 32px;background:var(--navy);color:var(--white);text-align:center;position:relative">
+<div style="position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)"></div>
+<div class="ctn">
+<p style="font-size:14px;color:var(--gold);margin-bottom:16px;font-weight:500;letter-spacing:.3px">For every manager who leads without a coach in their corner.</p>
+<h2 style="font-size:40px;font-family:'Sora',sans-serif;margin-bottom:20px;font-weight:600;line-height:1.15">You Figured It Out On Your Own.<br>Now Go Further.</h2>
+<p style="color:var(--gray-lt);font-size:17px;margin-bottom:36px">10 minutes. 12 scenarios. One assessment that reveals what you can't see on your own.</p>
+<a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" class="btn btn-gold" style="font-size:16px;padding:16px 40px">Discover Your Leadership Archetype &rarr;</a>
+<div style="color:var(--gray);font-size:13px;margin-top:20px">Free &middot; Confidential &middot; No app needed &middot; Results in 10 minutes</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--navy);color:var(--gray-lt);padding:48px 32px 20px;border-top:1px solid rgba(255,255,255,.04)"><div class="ctn">
+<div class="grid" style="margin-bottom:32px">
+<div style="-webkit-flex:2;flex:2;min-width:240px;margin-right:60px;margin-bottom:24px">
+<div style="display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;margin-bottom:12px">
+<svg viewBox="0 0 44 44" width="28" height="28" style="margin-right:8px"><circle cx="22" cy="10" r="6" fill="#C9A84C"/><path d="M6 40 Q6 20, 22 18 Q38 20, 38 40" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.25"/><path d="M10 36 Q10 22, 22 20 Q34 22, 34 36" stroke="#C9A84C" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+<span style="font-family:'Sora',sans-serif;font-size:18px;font-weight:600;color:var(--white)">Lightning<span style="color:var(--gold);font-weight:400">Coach</span></span>
+</div>
+<p style="font-size:13px;line-height:1.6;max-width:280px;color:var(--gray)">AI-powered leadership assessment and coaching. Understanding how you actually lead — so you can become who you aspire to be.</p>
+</div>
+<div style="-webkit-flex:1;flex:1;min-width:120px;margin-right:40px;margin-bottom:24px"><div style="font-weight:600;font-size:11px;color:var(--white);margin-bottom:14px;text-transform:uppercase;letter-spacing:1.5px">Platform</div><a href="#how" style="display:block;color:var(--gray);font-size:13px;margin-bottom:10px">How It Works</a><a href="#methodology" style="display:block;color:var(--gray);font-size:13px;margin-bottom:10px">ASLA Methodology</a><a href="#archetypes" style="display:block;color:var(--gray);font-size:13px;margin-bottom:10px">Archetypes</a><a href="#pricing" style="display:block;color:var(--gray);font-size:13px">Pricing</a></div>
+<div style="-webkit-flex:1;flex:1;min-width:120px;margin-right:40px;margin-bottom:24px"><div style="font-weight:600;font-size:11px;color:var(--white);margin-bottom:14px;text-transform:uppercase;letter-spacing:1.5px">Company</div><a href="https://wa.me/919958355005?text=Whitepaper%20request" style="display:block;color:var(--gray);font-size:13px;margin-bottom:10px">Research</a><a href="#organizations" style="display:block;color:var(--gray);font-size:13px;margin-bottom:10px">Enterprise</a><a href="https://wa.me/919958355005?text=Coach%20partnership" style="display:block;color:var(--gray);font-size:13px;margin-bottom:10px">Coach With Us</a><a href="#faq" style="display:block;color:var(--gray);font-size:13px">FAQ</a></div>
+<div style="-webkit-flex:1;flex:1;min-width:120px;margin-bottom:24px"><div style="font-weight:600;font-size:11px;color:var(--white);margin-bottom:14px;text-transform:uppercase;letter-spacing:1.5px">Contact</div><div style="font-size:13px;color:var(--gray);margin-bottom:10px">admin@lightningcoach.com</div><div style="font-size:13px;color:var(--gray)">India</div></div>
+</div>
+<div style="border-top:1px solid rgba(255,255,255,.06);padding-top:20px;display:-webkit-flex;display:flex;-webkit-justify-content:space-between;justify-content:space-between;-webkit-flex-wrap:wrap;flex-wrap:wrap;font-size:11px;color:var(--gray)">
+<span>&copy; 2026 LightningCoach Technologies. All rights reserved.</span><span>Patent Pending &middot; LC-2026-ASL-001</span>
+</div></div></footer>
+
+<!-- FLOAT -->
+<a href="https://wa.me/919958355005?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" style="position:fixed;bottom:28px;right:28px;z-index:99;width:56px;height:56px;border-radius:28px;background:var(--gold);display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;box-shadow:0 4px 20px rgba(201,168,76,.35);cursor:pointer;-webkit-transition:all .2s;transition:all .2s;text-decoration:none" title="Start Assessment"><svg viewBox="0 0 24 24" width="28" height="28" fill="#0A1628"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+<script>document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'})})});</script>
