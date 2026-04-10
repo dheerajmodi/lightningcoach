@@ -13,372 +13,341 @@
 :root{--navy:#0A1628;--navy-mid:#132240;--white:#FFFFFF;--off-white:#F7F8FA;--gold:#C9A84C;--gold-lt:#E8D5A0;--gold-dk:#A88B3D;--gray:#6B7B8D;--gray-lt:#9EAAB8;--gray-xlt:#CBD5E1;--teal:#0EA5A0;--green:#22C55E;--amber:#F59E0B;--red:#EF4444;--text:#1E293B;--text-lt:#475569}
 body{font-family:'Outfit',system-ui,sans-serif;color:var(--text);background:var(--off-white);-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:'Sora',sans-serif;font-weight:600}
-
-/* REPORT CONTAINER */
 .report{max-width:680px;margin:0 auto;padding:20px 16px 60px}
-
-/* NAV */
 .rp-nav{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:space-between;justify-content:space-between;padding:16px 0;margin-bottom:24px}
 .rp-logo{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;font-family:'Sora',sans-serif;font-size:16px;font-weight:600;color:var(--navy)}
 .rp-logo svg{margin-right:8px}
 .rp-logo em{color:var(--gold);font-style:normal;font-weight:400}
-.rp-date{font-size:12px;color:var(--gray)}
-
-/* ARCHETYPE HERO CARD */
-.arch-hero{background:linear-gradient(135deg,#0A1628 0%,#1B3058 100%);border-radius:20px;padding:40px 32px;color:var(--white);position:relative;overflow:hidden;margin-bottom:24px}
-.arch-hero::after{content:'';position:absolute;top:-30%;right:-20%;width:60%;height:160%;background:radial-gradient(ellipse,rgba(201,168,76,.06),transparent 60%);pointer-events:none}
-.arch-hero-inner{position:relative}
-.arch-emoji{font-size:56px;margin-bottom:16px}
-.arch-title{font-size:32px;margin-bottom:4px}
-.arch-sub{font-size:14px;color:var(--gold-lt);margin-bottom:20px}
-.arch-desc{font-size:15px;color:var(--gray-lt);line-height:1.65;max-width:480px}
-.arch-score-badge{position:absolute;top:32px;right:32px;text-align:center}
-.arch-score-num{font-size:40px;font-weight:700;font-family:'Sora',sans-serif;color:var(--gold)}
-.arch-score-label{font-size:10px;color:var(--gray);text-transform:uppercase;letter-spacing:1px}
-
-/* SECTION CARD */
 .card{background:var(--white);border-radius:16px;padding:28px 24px;margin-bottom:16px;border:1px solid var(--gray-xlt)}
 .card-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:14px}
-.card-title{font-family:'Sora',sans-serif;font-size:20px;font-weight:600;margin-bottom:16px;color:var(--navy)}
-
-/* DIMENSION BARS */
 .dim-row{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;padding:10px 0;border-bottom:1px solid var(--off-white)}
 .dim-row:last-child{border-bottom:none}
 .dim-name{width:130px;font-size:13px;font-weight:600;color:var(--navy);-webkit-flex-shrink:0;flex-shrink:0}
-.dim-bar-wrap{-webkit-flex:1;flex:1;height:10px;background:#E2E8F0;border-radius:5px;margin:0 14px;overflow:hidden;position:relative}
+.dim-bar-wrap{-webkit-flex:1;flex:1;height:10px;background:#E2E8F0;border-radius:5px;margin:0 14px;overflow:hidden}
 .dim-bar{height:100%;border-radius:5px;-webkit-transition:width 1s ease;transition:width 1s ease}
 .dim-score{width:36px;font-size:14px;font-weight:700;text-align:right;-webkit-flex-shrink:0;flex-shrink:0}
-.dim-bar.green{background:var(--green)}.dim-score.green{color:var(--green)}
-.dim-bar.teal{background:var(--teal)}.dim-score.teal{color:var(--teal)}
-.dim-bar.amber{background:var(--amber)}.dim-score.amber{color:var(--amber)}
-.dim-bar.red{background:var(--red)}.dim-score.red{color:var(--red)}
-
-/* STRENGTH + BLIND SPOT */
 .insight-row{display:-webkit-flex;display:flex;margin:0 -8px;-webkit-flex-wrap:wrap;flex-wrap:wrap}
 .insight-box{-webkit-flex:1;flex:1;min-width:200px;margin:0 8px 12px;padding:20px;border-radius:12px}
-.insight-icon{font-size:24px;margin-bottom:8px}
-.insight-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
-.insight-text{font-size:14px;line-height:1.5}
-
-/* TIP */
-.tip-box{padding:20px 24px;border-radius:12px;background:#F0FDFA;border-left:4px solid var(--teal)}
-.tip-title{font-size:12px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
-.tip-text{font-size:14px;color:var(--text);line-height:1.6}
-
-/* BLURRED PRO SECTIONS */
 .pro-locked{position:relative;overflow:hidden}
 .pro-content{-webkit-filter:blur(6px);filter:blur(6px);pointer-events:none;-webkit-user-select:none;user-select:none}
 .pro-overlay{position:absolute;top:0;left:0;right:0;bottom:0;display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;background:rgba(255,255,255,.7);z-index:2;border-radius:12px}
-.pro-lock-icon{font-size:32px;margin-bottom:12px}
-.pro-lock-title{font-family:'Sora',sans-serif;font-size:16px;font-weight:600;color:var(--navy);margin-bottom:4px}
-.pro-lock-sub{font-size:13px;color:var(--gray);margin-bottom:16px}
 .btn{display:-webkit-inline-flex;display:inline-flex;-webkit-align-items:center;align-items:center;padding:14px 28px;border-radius:8px;font-weight:600;font-size:14px;cursor:pointer;border:none;font-family:'Outfit',sans-serif;-webkit-transition:all .2s;transition:all .2s}
 .btn-gold{background:var(--gold);color:var(--navy)}.btn-gold:hover{background:var(--gold-dk)}
-.btn-navy{background:var(--navy);color:var(--white)}
-.btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--gray-xlt)}
-
-/* SHARE */
-.share-row{display:-webkit-flex;display:flex;-webkit-justify-content:center;justify-content:center;margin-top:8px}
-.share-btn{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid var(--gray-xlt);background:var(--white);color:var(--navy);margin:0 6px;-webkit-transition:all .2s;transition:all .2s}
-.share-btn:hover{border-color:var(--gold);background:rgba(201,168,76,.04)}
-.share-btn svg{margin-right:8px}
-
-/* FOOTER */
-.rp-footer{text-align:center;padding:32px 0;font-size:12px;color:var(--gray)}
-
-/* ANIMATIONS */
-@-webkit-keyframes fadeUp{from{opacity:0;-webkit-transform:translateY(20px);transform:translateY(20px)}to{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}
+.loading{text-align:center;padding:100px 20px}
+.loading-spinner{width:40px;height:40px;border:3px solid var(--gray-xlt);border-top-color:var(--gold);border-radius:50%;-webkit-animation:spin 1s linear infinite;animation:spin 1s linear infinite;margin:0 auto 16px}
+@-webkit-keyframes spin{to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@-webkit-keyframes fadeUp{from{opacity:0;-webkit-transform:translateY(20px)}to{opacity:1;-webkit-transform:translateY(0)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .fade-up{-webkit-animation:fadeUp .6s ease forwards;animation:fadeUp .6s ease forwards;opacity:0}
-.d1{-webkit-animation-delay:.1s;animation-delay:.1s}
-.d2{-webkit-animation-delay:.2s;animation-delay:.2s}
-.d3{-webkit-animation-delay:.3s;animation-delay:.3s}
-.d4{-webkit-animation-delay:.4s;animation-delay:.4s}
-.d5{-webkit-animation-delay:.5s;animation-delay:.5s}
-.d6{-webkit-animation-delay:.6s;animation-delay:.6s}
-
-@media(max-width:600px){
-  .arch-hero{padding:28px 20px}
-  .arch-emoji{font-size:40px}
-  .arch-title{font-size:24px}
-  .arch-score-badge{position:static;margin-bottom:16px;text-align:left}
-  .dim-name{width:90px;font-size:11px}
-  .card{padding:22px 18px}
-}
+.d1{-webkit-animation-delay:.1s;animation-delay:.1s}.d2{-webkit-animation-delay:.2s;animation-delay:.2s}.d3{-webkit-animation-delay:.3s;animation-delay:.3s}.d4{-webkit-animation-delay:.4s;animation-delay:.4s}.d5{-webkit-animation-delay:.5s;animation-delay:.5s}
+@media(max-width:600px){.dim-name{width:90px;font-size:11px}.card{padding:22px 18px}}
 </style>
 </head>
 <body>
+<div class="report" id="report">
 
-<div class="report">
+<!-- LOADING STATE -->
+<div class="loading" id="loading">
+<div class="loading-spinner"></div>
+<div style="font-family:'Sora',sans-serif;font-size:18px;color:var(--navy);margin-bottom:8px">Loading your report...</div>
+<div style="font-size:14px;color:var(--gray)">Preparing your leadership profile</div>
+</div>
+
+<!-- REPORT CONTENT (hidden until data loads) -->
+<div id="content" style="display:none">
 
 <!-- NAV -->
 <div class="rp-nav fade-up">
 <div class="rp-logo">
 <svg viewBox="0 0 44 44" width="26" height="26"><circle cx="22" cy="10" r="6" fill="#C9A84C"/><path d="M6 40 Q6 20, 22 18 Q38 20, 38 40" stroke="#0A1628" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.15"/><path d="M10 36 Q10 22, 22 20 Q34 22, 34 36" stroke="#C9A84C" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
-Lightning<em>Coach</em>
-</div>
-<div class="rp-date">Report generated April 10, 2026</div>
+Lightning<em>Coach</em></div>
+<div style="font-size:12px;color:var(--gray)" id="reportDate"></div>
 </div>
 
 <!-- HEADER -->
 <div style="margin-bottom:20px;text-align:center" class="fade-up d1">
 <div style="font-size:13px;color:var(--gray);margin-bottom:4px">Leadership Report for</div>
-<div style="font-family:'Sora',sans-serif;font-size:22px;font-weight:600;color:var(--navy)">Rajneesh Kumar</div>
-<div style="font-size:13px;color:var(--gray-lt)">Senior Engineering Manager &middot; Technology &middot; Team of 12</div>
+<div style="font-family:'Sora',sans-serif;font-size:22px;font-weight:600;color:var(--navy)" id="userName"></div>
+<div style="font-size:13px;color:var(--gray-lt)" id="userMeta"></div>
 </div>
 
 <!-- ARCHETYPE HERO -->
-<div class="arch-hero fade-up d2">
-<div class="arch-hero-inner">
-<div class="arch-score-badge">
-<div class="arch-score-num">3.6</div>
-<div class="arch-score-label">Overall Score</div>
-</div>
-<div class="arch-emoji">&#9881;&#65039;</div>
-<div class="arch-title">The Operator</div>
-<div class="arch-sub">with Shield tendencies</div>
-<div class="arch-desc">You're the person everyone counts on. When things need to get done, you make it happen — often by doing it yourself. Your reliability is your superpower, but it's also the ceiling holding you back from the next level of leadership.</div>
+<div style="background:linear-gradient(135deg,#0A1628,#1B3058);border-radius:20px;padding:40px 32px;color:#fff;position:relative;overflow:hidden;margin-bottom:16px" class="fade-up d2">
+<div style="position:absolute;top:-30%;right:-20%;width:60%;height:160%;background:radial-gradient(ellipse,rgba(201,168,76,.06),transparent 60%);pointer-events:none"></div>
+<div style="position:relative">
+<div style="position:absolute;top:0;right:0;text-align:center"><div style="font-size:40px;font-weight:700;font-family:'Sora',sans-serif;color:#C9A84C" id="overallScore"></div><div style="font-size:10px;color:#6B7B8D;text-transform:uppercase;letter-spacing:1px">Overall</div></div>
+<div style="font-size:56px;margin-bottom:16px" id="archEmoji"></div>
+<div style="font-family:'Sora',sans-serif;font-size:32px;font-weight:600;margin-bottom:4px" id="archName"></div>
+<div style="font-size:14px;color:#E8D5A0;margin-bottom:20px" id="archSub"></div>
+<div style="font-size:15px;color:#9EAAB8;line-height:1.65;max-width:480px" id="archDesc"></div>
 </div>
 </div>
 
 <!-- DIMENSIONS -->
 <div class="card fade-up d3">
 <div class="card-label">Leadership Dimensions</div>
-<div class="card-title">Your Scores Across 10 Dimensions</div>
-
-<div class="dim-row">
-<div class="dim-name">Strategic Clarity</div>
-<div class="dim-bar-wrap"><div class="dim-bar green" style="width:90%"></div></div>
-<div class="dim-score green">4.5</div>
-</div>
-<div class="dim-row">
-<div class="dim-name">Accountability</div>
-<div class="dim-bar-wrap"><div class="dim-bar teal" style="width:84%"></div></div>
-<div class="dim-score teal">4.2</div>
-</div>
-<div class="dim-row">
-<div class="dim-name">Decision Making</div>
-<div class="dim-bar-wrap"><div class="dim-bar teal" style="width:80%"></div></div>
-<div class="dim-score teal">4.0</div>
-</div>
-<div class="dim-row">
-<div class="dim-name">Resilience</div>
-<div class="dim-bar-wrap"><div class="dim-bar teal" style="width:76%"></div></div>
-<div class="dim-score teal">3.8</div>
-</div>
-<div class="dim-row">
-<div class="dim-name">Communication</div>
-<div class="dim-bar-wrap"><div class="dim-bar teal" style="width:72%"></div></div>
-<div class="dim-score teal">3.6</div>
-</div>
-<div class="dim-row">
-<div class="dim-name">Adaptability</div>
-<div class="dim-bar-wrap"><div class="dim-bar amber" style="width:60%"></div></div>
-<div class="dim-score amber">3.0</div>
-</div>
-<div class="dim-row">
-<div class="dim-name">Innovation</div>
-<div class="dim-bar-wrap"><div class="dim-bar amber" style="width:56%"></div></div>
-<div class="dim-score amber">2.8</div>
-</div>
-<div class="dim-row">
-<div class="dim-name">Conflict Mgmt</div>
-<div class="dim-bar-wrap"><div class="dim-bar amber" style="width:50%"></div></div>
-<div class="dim-score amber">2.5</div>
-</div>
-<div class="dim-row">
-<div class="dim-name">People Dev</div>
-<div class="dim-bar-wrap"><div class="dim-bar red" style="width:44%"></div></div>
-<div class="dim-score red">2.2</div>
-</div>
-<div class="dim-row">
-<div class="dim-name">Delegation</div>
-<div class="dim-bar-wrap"><div class="dim-bar red" style="width:36%"></div></div>
-<div class="dim-score red">1.8</div>
-</div>
+<div style="font-family:'Sora',sans-serif;font-size:18px;font-weight:600;margin-bottom:16px;color:var(--navy)">Your Scores Across 10 Dimensions</div>
+<div id="dimBars"></div>
 </div>
 
 <!-- STRENGTH + BLIND SPOT -->
-<div class="card fade-up d4">
+<div class="card fade-up d3">
 <div class="card-label">Key Insights</div>
 <div class="insight-row">
-<div class="insight-box" style="background:#D1FAE5">
-<div class="insight-icon">&#128170;</div>
-<div class="insight-title" style="color:#065F46">Top Strength</div>
-<div class="insight-text" style="color:#064E3B">You bring clarity to chaos. When situations are ambiguous, your team looks to you for direction — and you consistently deliver a clear path forward.</div>
-</div>
-<div class="insight-box" style="background:#FEE2E2">
-<div class="insight-icon">&#128065;</div>
-<div class="insight-title" style="color:#991B1B">Blind Spot</div>
-<div class="insight-text" style="color:#7F1D1D">You solve problems by doing, not by developing. Every task you take on is a growth opportunity stolen from your team. Your reliability is becoming their dependency.</div>
-</div>
+<div class="insight-box" style="background:#D1FAE5"><div style="font-size:24px;margin-bottom:8px">&#128170;</div><div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#065F46;margin-bottom:6px">Top Strength</div><div style="font-size:14px;color:#064E3B;line-height:1.5" id="strengthText"></div></div>
+<div class="insight-box" style="background:#FEE2E2"><div style="font-size:24px;margin-bottom:8px">&#128065;</div><div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#991B1B;margin-bottom:6px">Blind Spot</div><div style="font-size:14px;color:#7F1D1D;line-height:1.5" id="blindSpotText"></div></div>
 </div>
 </div>
 
 <!-- COACHING TIP -->
 <div class="card fade-up d4">
 <div class="card-label">This Week's Action</div>
-<div class="tip-box">
-<div class="tip-title">&#128161; Your Quick Win</div>
-<div class="tip-text">Tomorrow morning, pick <strong>ONE task</strong> from your to-do list that someone on your team could do at 80% of your quality. Hand it off with clear expectations and a deadline. Don't check in for 48 hours. Notice what happens — to the task, to them, and to you.</div>
+<div style="padding:20px 24px;border-radius:12px;background:#F0FDFA;border-left:4px solid #0EA5A0">
+<div style="font-size:12px;font-weight:700;color:#0EA5A0;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">&#128161; Quick Win</div>
+<div style="font-size:14px;color:var(--text);line-height:1.6" id="tipText"></div>
 </div>
 </div>
 
-<!-- PRO SECTION: CONTRADICTION (LOCKED) -->
-<div class="card pro-locked fade-up d5">
+<!-- PRO: CONTRADICTION (LOCKED) -->
+<div class="card pro-locked fade-up d4">
 <div class="pro-overlay">
-<div class="pro-lock-icon">&#128274;</div>
-<div class="pro-lock-title">Contradiction Analysis</div>
-<div class="pro-lock-sub">See where your beliefs and actions diverge</div>
-<a href="#pro" class="btn btn-gold">Unlock PRO Report &mdash; &#8377;999</a>
+<div style="font-size:32px;margin-bottom:12px">&#128274;</div>
+<div style="font-family:'Sora',sans-serif;font-size:16px;font-weight:600;color:var(--navy)">Contradiction Analysis</div>
+<div style="font-size:13px;color:var(--gray);margin-bottom:16px">See where your beliefs and actions diverge</div>
+<a href="#pro" class="btn btn-gold">Unlock PRO Report — ₹999</a>
 </div>
 <div class="pro-content">
 <div class="card-label">Contradiction Detected</div>
-<div style="padding:16px 20px;background:#FEF3C7;border-radius:10px;border-left:3px solid var(--gold)">
-<div style="font-size:13px;color:#78350F;line-height:1.5">You value building future leaders, but when given the chance to delegate, you chose speed over growth in 3 out of 4 scenarios. This gap between intention and instinct is where your biggest transformation opportunity lives.</div>
+<div style="padding:16px 20px;background:#FEF3C7;border-radius:10px;border-left:3px solid #C9A84C">
+<div style="font-size:13px;color:#78350F;line-height:1.5" id="contradictionText">Your assessment revealed a gap between what you believe and what you choose under pressure. This is where your biggest growth opportunity lives.</div>
 </div>
 </div>
 </div>
 
-<!-- PRO SECTION: MIRROR SENTENCE (LOCKED) -->
+<!-- PRO: MIRROR SENTENCE (LOCKED) -->
 <div class="card pro-locked fade-up d5">
 <div class="pro-overlay">
-<div class="pro-lock-icon">&#128374;</div>
-<div class="pro-lock-title">Your Mirror Sentence</div>
-<div class="pro-lock-sub">The one sentence that captures how others experience you</div>
-<a href="#pro" class="btn btn-gold">Unlock PRO Report &mdash; &#8377;999</a>
+<div style="font-size:32px;margin-bottom:12px">&#128374;</div>
+<div style="font-family:'Sora',sans-serif;font-size:16px;font-weight:600;color:var(--navy)">Your Mirror Sentence</div>
+<div style="font-size:13px;color:var(--gray);margin-bottom:16px">The one sentence that captures how others experience you</div>
+<a href="#pro" class="btn btn-gold">Unlock PRO Report — ₹999</a>
 </div>
 <div class="pro-content">
 <div class="card-label">Mirror Sentence</div>
 <div style="text-align:center;padding:24px 16px">
-<p style="font-size:20px;font-family:'Sora',sans-serif;font-weight:300;color:var(--navy);font-style:italic;line-height:1.5">"You never drop the ball — but you're carrying too many. Your team is ready for more than you're letting them do."</p>
+<p style="font-size:20px;font-family:'Sora',sans-serif;font-weight:300;color:var(--navy);font-style:italic;line-height:1.5" id="mirrorText">Your mirror sentence reveals the essence of your leadership — as experienced by those around you.</p>
 </div>
 </div>
 </div>
 
-<!-- PRO SECTION: DETAILED DIMENSIONS (LOCKED) -->
-<div class="card pro-locked fade-up d6">
+<!-- PRO: DETAILED DIMENSIONS (LOCKED) -->
+<div class="card pro-locked fade-up d5">
 <div class="pro-overlay">
-<div class="pro-lock-icon">&#128202;</div>
-<div class="pro-lock-title">Detailed Dimension Analysis</div>
-<div class="pro-lock-sub">Deep-dive into each of your 10 leadership dimensions</div>
-<a href="#pro" class="btn btn-gold">Unlock PRO Report &mdash; &#8377;999</a>
+<div style="font-size:32px;margin-bottom:12px">&#128202;</div>
+<div style="font-family:'Sora',sans-serif;font-size:16px;font-weight:600;color:var(--navy)">Detailed Dimension Analysis</div>
+<div style="font-size:13px;color:var(--gray);margin-bottom:16px">Deep-dive into each of your 10 leadership dimensions</div>
+<a href="#pro" class="btn btn-gold">Unlock PRO Report — ₹999</a>
 </div>
 <div class="pro-content">
 <div class="card-label">Dimension Deep-Dive</div>
-<div style="padding:12px 0">
-<div style="padding:14px 16px;border-radius:10px;background:var(--off-white);margin-bottom:8px"><div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px">Delegation (1.8/5) — Critical Gap</div><div style="font-size:12px;color:var(--gray);line-height:1.5">In 3 of 4 delegation scenarios, you chose to do the work yourself rather than assign it. This pattern suggests a trust gap — not in your team's ability, but in your willingness to accept imperfect execution as a growth cost.</div></div>
-<div style="padding:14px 16px;border-radius:10px;background:var(--off-white);margin-bottom:8px"><div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px">People Development (2.2/5) — Developing</div><div style="font-size:12px;color:var(--gray);line-height:1.5">You prioritize task completion over team member growth. When faced with coaching vs. solving, you consistently choose solving. Your team delivers results — but they're not growing under your leadership.</div></div>
-<div style="padding:14px 16px;border-radius:10px;background:var(--off-white)"><div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px">Strategic Clarity (4.5/5) — Exceptional</div><div style="font-size:12px;color:var(--gray);line-height:1.5">You excel at cutting through ambiguity. Your team never wonders where they're going — you make the destination clear. This is rare and valuable. Protect this strength.</div></div>
-</div>
-</div>
-</div>
-
-<!-- COACHING CTA -->
-<div class="card fade-up d6" style="background:#F0FDFA;border:1px solid #99F6E4">
-<div style="display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-flex-wrap:wrap;flex-wrap:wrap">
-<div style="-webkit-flex:1;flex:1;min-width:220px;margin-right:20px;margin-bottom:12px">
-<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--teal);margin-bottom:8px">Go Deeper</div>
-<div style="font-family:'Sora',sans-serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:6px">Work With a Coach</div>
-<div style="font-size:13px;color:var(--gray);line-height:1.5">Get matched with an ICF-certified coach who specializes in your archetype. Turn these insights into lasting behavioral change.</div>
-</div>
-<div style="text-align:center"><a href="/cdn-cgi/l/email-protection#cfaeaba2a6a18fa3a6a8a7bba1a6a1a8aca0aeaca7e1aca0a2f0bcbaada5aaacbbf28ca0aeaca7a6a1a8eafdff86a1bebaa6bdb6e9ada0abb6f287a6eafd8ceafdff86eafdffaca0a2bfa3aabbaaabeafdffbba7aaeafdffaebcbcaabcbca2aaa1bbeafdffaea1abeafdffb8aea1bbeafdffbba0eafdffaca0a1a1aaacbbeafdffb8a6bba7eafdffaeeafdffaca0aeaca7e1eafdff82b6eafdffaebdaca7aabbb6bfaaeafdffa6bceafdff80bfaabdaebba0bde1" class="btn btn-gold">Connect With a Coach &rarr;</a><div style="font-size:11px;color:var(--gray);margin-top:6px">From &#8377;5,000/session</div></div>
+<div id="dimDetails"></div>
 </div>
 </div>
 
 <!-- PRO CTA -->
-<div class="card fade-up d6" style="text-align:center;background:linear-gradient(135deg,#0A1628,#1B3058);color:var(--white);border:none" id="pro">
-<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--gold);margin-bottom:12px">Unlock Everything</div>
+<div class="card fade-up d5" style="text-align:center;background:linear-gradient(135deg,#0A1628,#1B3058);color:#fff;border:none" id="pro">
+<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#C9A84C;margin-bottom:12px">Unlock Everything</div>
 <div style="font-family:'Sora',sans-serif;font-size:24px;font-weight:600;margin-bottom:8px">Your Full PRO Report</div>
-<div style="font-size:14px;color:var(--gray-lt);margin-bottom:24px;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.6">Contradiction analysis, mirror sentence, detailed breakdown of all 10 dimensions, PDF download, and industry benchmarks.</div>
-<div style="font-size:36px;font-weight:700;font-family:'Sora',sans-serif;color:var(--gold);margin-bottom:4px">&#8377;999</div>
-<div style="font-size:13px;color:var(--gray);margin-bottom:24px">One-time payment &middot; Instant unlock</div>
-<button class="btn btn-gold" style="font-size:16px;padding:16px 40px;margin-bottom:12px" onclick="alert('Razorpay integration coming soon!')">Unlock PRO Report &rarr;</button>
-<div style="font-size:12px;color:var(--gray);margin-top:8px">100% money-back guarantee if the report doesn't describe how you actually lead.</div>
+<div style="font-size:14px;color:#9EAAB8;margin-bottom:24px;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.6">Contradiction analysis, mirror sentence, detailed breakdown of all 10 dimensions, and PDF download.</div>
+<div style="font-size:36px;font-weight:700;font-family:'Sora',sans-serif;color:#C9A84C;margin-bottom:4px">₹999</div>
+<div style="font-size:13px;color:#6B7B8D;margin-bottom:24px">One-time payment · Instant unlock</div>
+<button class="btn btn-gold" style="font-size:16px;padding:16px 40px" onclick="alert('Payment integration coming soon! Email admin@lightningcoach.com to get your PRO report.')">Unlock PRO Report →</button>
+<div style="font-size:12px;color:#6B7B8D;margin-top:12px">100% money-back guarantee</div>
+</div>
+
+<!-- COACHING CTA -->
+<div class="card fade-up d5" style="background:#F0FDFA;border:1px solid #99F6E4">
+<div style="display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-flex-wrap:wrap;flex-wrap:wrap">
+<div style="-webkit-flex:1;flex:1;min-width:220px;margin-right:20px;margin-bottom:12px">
+<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#0EA5A0;margin-bottom:8px">Go Deeper</div>
+<div style="font-family:'Sora',sans-serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:6px">Work With a Coach</div>
+<div style="font-size:13px;color:var(--gray);line-height:1.5">Get matched with an ICF-certified coach who specializes in your archetype.</div>
+</div>
+<div style="text-align:center"><a href="mailto:admin@lightningcoach.com?subject=Coaching%20Inquiry" class="btn btn-gold">Connect With a Coach →</a><div style="font-size:11px;color:var(--gray);margin-top:6px">From ₹5,000/session</div></div>
+</div>
 </div>
 
 <!-- SHARE -->
-<div class="card fade-up d6" style="text-align:center">
+<div class="card fade-up d5" style="text-align:center">
 <div class="card-label">Share Your Archetype</div>
-<div style="font-family:'Sora',sans-serif;font-size:18px;margin-bottom:4px;color:var(--navy)">&#9881;&#65039; I'm The Operator</div>
-<div style="font-size:13px;color:var(--gray);margin-bottom:16px">Top strength: Strategic Clarity &middot; Blind spot: Delegation</div>
-<div class="share-row">
-<button class="share-btn" onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href),'_blank')">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-Share on LinkedIn
-</button>
-<button class="share-btn" onclick="navigator.share?.({title:'My Leadership Archetype',url:window.location.href})||alert('Copy this link: '+window.location.href)">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A1628" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-Share Link
-</button>
+<div style="font-family:'Sora',sans-serif;font-size:18px;margin-bottom:4px;color:var(--navy)" id="shareTitle"></div>
+<div style="font-size:13px;color:var(--gray);margin-bottom:16px" id="shareSub"></div>
+<div style="display:-webkit-flex;display:flex;-webkit-justify-content:center;justify-content:center">
+<button style="padding:10px 20px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid var(--gray-xlt);background:var(--white);color:var(--navy)" onclick="navigator.share?navigator.share({title:'My Leadership Archetype',url:window.location.href}):prompt('Copy this link:',window.location.href)">Share Link</button>
 </div>
 </div>
 
 <!-- RETAKE -->
-<div style="text-align:center;margin-top:8px;margin-bottom:16px" class="fade-up d6">
-<a href="https://wa.me/919810381986?text=Hi!%20I%20want%20to%20discover%20my%20leadership%20archetype" style="font-size:13px;color:var(--gray);text-decoration:underline">Take the assessment again in 90 days to track your growth &rarr;</a>
+<div style="text-align:center;margin-top:8px;margin-bottom:16px">
+<a href="https://wa.me/919810381986?text=Hi!" style="font-size:13px;color:var(--gray);text-decoration:underline">Take the assessment again in 90 days →</a>
 </div>
 
 <!-- FOOTER -->
-<div class="rp-footer">
+<div style="text-align:center;padding:32px 0;font-size:12px;color:var(--gray)">
 <div style="display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;margin-bottom:8px">
 <svg viewBox="0 0 44 44" width="20" height="20" style="margin-right:6px"><circle cx="22" cy="10" r="6" fill="#C9A84C"/><path d="M6 40 Q6 20, 22 18 Q38 20, 38 40" stroke="#6B7B8D" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.2"/><path d="M10 36 Q10 22, 22 20 Q34 22, 34 36" stroke="#C9A84C" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
 <span style="font-family:'Sora',sans-serif;font-size:13px;font-weight:600;color:var(--gray)">Lightning<span style="color:var(--gold)">Coach</span></span>
 </div>
-<div>This report is confidential. &copy; 2026 LightningCoach Technologies.</div>
-<div style="margin-top:4px">Patent Pending &middot; LC-2026-ASL-001</div>
+<div>This report is confidential. © 2026 LightningCoach Technologies.</div>
+<div style="margin-top:4px">Patent Pending · LC-2026-ASL-001</div>
 </div>
 
-</div>
+</div><!-- end #content -->
+</div><!-- end .report -->
 
 <script>
-// Dynamic data loading from Supabase via bot API
+const ARCHETYPES = {
+  Strategist: {emoji:'♟️', desc:'You see what others miss. Your ability to think long-term and make bold, data-informed decisions sets you apart. But vision without connection can leave your team behind.'},
+  Shield: {emoji:'🛡️', desc:'You absorb pressure so your team doesn\'t have to. Your loyalty builds deep trust, but carrying everything yourself is unsustainable — and it stops your team from growing.'},
+  Operator: {emoji:'⚙️', desc:'You\'re the person everyone counts on. When things need to get done, you make it happen — often by doing it yourself. Your reliability is your superpower, but it\'s also the ceiling holding you back.'},
+  Connector: {emoji:'🤝', desc:'You lead through relationships. People trust you because you genuinely care. But empathy without accountability means hard conversations get avoided — and problems fester.'},
+  Builder: {emoji:'🏗️', desc:'You think in systems. Where others see chaos, you see structure waiting to be created. But over-systematizing can squeeze out the human element that makes teams thrive.'},
+  Catalyst: {emoji:'🔥', desc:'You drive change. Your energy is contagious and your courage to challenge the status quo is rare. But constant disruption without follow-through leaves a trail of started-but-not-finished.'}
+};
+
+const DIM_LABELS = {
+  score_strategic_clarity: 'Strategic Clarity',
+  score_accountability: 'Accountability',
+  score_decision_making: 'Decision Making',
+  score_resilience: 'Resilience',
+  score_communication: 'Communication',
+  score_adaptability: 'Adaptability',
+  score_innovation: 'Innovation',
+  score_conflict_resolution: 'Conflict Mgmt',
+  score_people_development: 'People Dev',
+  score_delegation: 'Delegation'
+};
+
+function dimColor(score) {
+  if (score >= 4) return 'green';
+  if (score >= 3) return 'teal';
+  if (score >= 2.5) return 'amber';
+  return 'red';
+}
+
+function colorVar(c) {
+  return c === 'green' ? '#22C55E' : c === 'teal' ? '#0EA5A0' : c === 'amber' ? '#F59E0B' : '#EF4444';
+}
+
+function renderReport(d) {
+  var arch = d.archetype || 'Operator';
+  var archInfo = ARCHETYPES[arch] || ARCHETYPES.Operator;
+  var emoji = d.archetype_emoji || archInfo.emoji;
+  var secondary = d.secondary_archetype;
+
+  document.getElementById('reportDate').textContent = d.completed_at ? 'Report generated ' + new Date(d.completed_at).toLocaleDateString('en-IN',{year:'numeric',month:'long',day:'numeric'}) : '';
+  document.getElementById('userName').textContent = d.name || 'Leader';
+  document.getElementById('userMeta').textContent = (d.role || '') + (d.team_size ? ' · Team of ' + d.team_size : '') + (d.industry ? ' · ' + d.industry : '');
+  document.getElementById('overallScore').textContent = d.overall_score ? parseFloat(d.overall_score).toFixed(1) : '3.0';
+  document.getElementById('archEmoji').textContent = emoji;
+  document.getElementById('archName').textContent = 'The ' + arch;
+  document.getElementById('archSub').textContent = secondary ? 'with ' + secondary + ' tendencies' : '';
+  document.getElementById('archDesc').textContent = archInfo.desc;
+
+  // Dimensions
+  var dims = [];
+  Object.keys(DIM_LABELS).forEach(function(key) {
+    if (d[key] !== null && d[key] !== undefined) {
+      dims.push({name: DIM_LABELS[key], score: parseFloat(d[key])});
+    }
+  });
+  dims.sort(function(a,b) { return b.score - a.score; });
+
+  var barsHtml = '';
+  dims.forEach(function(dim) {
+    var c = dimColor(dim.score);
+    var pct = Math.round(dim.score / 5 * 100);
+    barsHtml += '<div class="dim-row"><div class="dim-name">' + dim.name + '</div><div class="dim-bar-wrap"><div class="dim-bar" style="width:' + pct + '%;background:' + colorVar(c) + '"></div></div><div class="dim-score" style="color:' + colorVar(c) + '">' + dim.score.toFixed(1) + '</div></div>';
+  });
+  document.getElementById('dimBars').innerHTML = barsHtml;
+
+  // Strength & blind spot
+  var topDim = dims[0] ? dims[0].name : 'Strategic thinking';
+  var weakDim = dims[dims.length - 1] ? dims[dims.length - 1].name : 'Delegation';
+  document.getElementById('strengthText').textContent = d.top_strength || 'Your strongest dimension is ' + topDim + '. This is where you naturally excel and where your team relies on you most.';
+  document.getElementById('blindSpotText').textContent = d.blind_spot || 'Your lowest dimension is ' + weakDim + '. This is the area most likely to limit your growth if left unaddressed.';
+
+  // Tip
+  document.getElementById('tipText').textContent = d.coaching_tip || 'This week, focus on one action related to your blind spot (' + weakDim + '). Small, consistent changes lead to lasting transformation.';
+
+  // PRO content (blurred but populated)
+  if (d.contradiction) document.getElementById('contradictionText').textContent = d.contradiction;
+  if (d.mirror_sentence) document.getElementById('mirrorText').textContent = d.mirror_sentence;
+
+  // Detailed dimensions (blurred)
+  var detailsHtml = '';
+  dims.forEach(function(dim) {
+    var c = dimColor(dim.score);
+    var bg = dim.score < 2.5 ? '#FEF2F2' : 'var(--off-white)';
+    var border = dim.score < 2.5 ? 'border-left:3px solid #EF4444;' : '';
+    detailsHtml += '<div style="padding:14px 16px;border-radius:10px;background:' + bg + ';margin-bottom:8px;' + border + '"><div style="display:-webkit-flex;display:flex;-webkit-justify-content:space-between;justify-content:space-between;margin-bottom:4px"><div style="font-size:13px;font-weight:700;color:var(--navy)">' + dim.name + '</div><div style="font-size:13px;font-weight:700;color:' + colorVar(c) + '">' + dim.score.toFixed(1) + '/5</div></div><div style="font-size:12px;color:var(--gray);line-height:1.5">Detailed analysis available in your PRO report.</div></div>';
+  });
+  document.getElementById('dimDetails').innerHTML = detailsHtml;
+
+  // Share
+  document.getElementById('shareTitle').textContent = emoji + ' I\'m The ' + arch;
+  document.getElementById('shareSub').textContent = 'Top strength: ' + topDim + ' · Blind spot: ' + weakDim;
+
+  // Show content, hide loading
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('content').style.display = 'block';
+}
+
+// Load data
 (async function() {
-  const params = new URLSearchParams(window.location.search);
-  const reportId = params.get('id');
-  if (!reportId) return; // Static demo mode — show sample data
-  
+  var params = new URLSearchParams(window.location.search);
+  var reportId = params.get('id');
+
+  if (!reportId) {
+    // No ID — show sample
+    renderReport({
+      name: 'Sample Report',
+      role: 'Engineering Manager',
+      team_size: '12',
+      industry: 'Technology',
+      archetype: 'Operator',
+      archetype_emoji: '⚙️',
+      secondary_archetype: 'Shield',
+      overall_score: 3.6,
+      score_strategic_clarity: 4.5,
+      score_accountability: 4.2,
+      score_decision_making: 4.0,
+      score_resilience: 3.8,
+      score_communication: 3.6,
+      score_adaptability: 3.0,
+      score_innovation: 2.8,
+      score_conflict_resolution: 2.5,
+      score_people_development: 2.2,
+      score_delegation: 1.8,
+      top_strength: 'You bring clarity to chaos. When situations are ambiguous, your team looks to you for direction — and you consistently deliver a clear path forward.',
+      blind_spot: 'You solve problems by doing, not by developing. Every task you take on is a growth opportunity stolen from your team.',
+      coaching_tip: 'Tomorrow morning, pick ONE task from your to-do list that someone could do at 80% of your quality. Hand it off. Don\'t check in for 48 hours.',
+      contradiction: 'You value building future leaders, but when given the chance to delegate, you chose speed over growth in 3 of 4 scenarios.',
+      mirror_sentence: 'You never drop the ball — but you\'re carrying too many. Your team is ready for more.',
+      completed_at: new Date().toISOString()
+    });
+    document.getElementById('reportDate').innerHTML = '<span style="color:#C9A84C;font-weight:600">SAMPLE REPORT</span>';
+    return;
+  }
+
   try {
-    const res = await fetch('https://lightningcoach-bot-production.up.railway.app/api/report/' + reportId);
-    if (!res.ok) {
-      document.querySelector('.report').innerHTML = '<div style="text-align:center;padding:100px 20px"><h2 style="font-family:Sora,sans-serif;color:#0A1628;margin-bottom:12px">Report Not Found</h2><p style="color:#6B7B8D">This report link may have expired or is invalid.</p><a href="https://wa.me/919810381986?text=Hi!" style="display:inline-block;margin-top:20px;padding:14px 28px;background:#C9A84C;color:#0A1628;border-radius:8px;font-weight:600;text-decoration:none">Take Free Assessment</a></div>';
-      return;
-    }
-    const d = await res.json();
-    
-    // Helper for dimension color
-    function dimColor(score) {
-      if (score >= 4) return 'green';
-      if (score >= 3) return 'teal';
-      if (score >= 2.5) return 'amber';
-      return 'red';
-    }
-    
-    // Update header
-    document.querySelector('.report').querySelectorAll('div')[3].textContent = d.name || 'Leader';
-    
-    // Update archetype
-    const archEmoji = d.archetype_emoji || '⚡';
-    const archName = d.archetype || 'Leader';
-    const secondary = d.secondary_archetype ? 'with ' + d.secondary_archetype + ' tendencies' : '';
-    
-    // Update dimension bars
-    const dims = [
-      {name: 'Strategic Clarity', score: d.score_strategic_clarity},
-      {name: 'Accountability', score: d.score_accountability},
-      {name: 'Decision Making', score: d.score_decision_making},
-      {name: 'Resilience', score: d.score_resilience},
-      {name: 'Communication', score: d.score_communication},
-      {name: 'Adaptability', score: d.score_adaptability},
-      {name: 'Innovation', score: d.score_innovation},
-      {name: 'Conflict Mgmt', score: d.score_conflict_resolution},
-      {name: 'People Dev', score: d.score_people_development},
-      {name: 'Delegation', score: d.score_delegation}
-    ].sort((a,b) => b.score - a.score);
-    
-    console.log('Report loaded:', d.report_id, d.name, d.archetype);
+    var res = await fetch('https://lightningcoach-bot-production.up.railway.app/api/report/' + reportId);
+    if (!res.ok) throw new Error('Not found');
+    var data = await res.json();
+    renderReport(data);
   } catch(e) {
-    console.log('Using sample data (API unavailable)');
+    document.getElementById('loading').innerHTML = '<div style="text-align:center;padding:60px 20px"><div style="font-size:48px;margin-bottom:16px">🔍</div><div style="font-family:Sora,sans-serif;font-size:20px;color:#0A1628;margin-bottom:8px">Report Not Found</div><div style="color:#6B7B8D;font-size:14px;margin-bottom:24px">This report link may be invalid or expired.</div><a href="https://wa.me/919810381986?text=Hi!" style="display:inline-block;padding:14px 28px;background:#C9A84C;color:#0A1628;border-radius:8px;font-weight:600;text-decoration:none">Take Free Assessment →</a></div>';
   }
 })();
 </script>
